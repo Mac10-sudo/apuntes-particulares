@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body con colores agradables */
+body {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    color: #374151;
+    padding: 20px;
+}
+
+/* Estilo para los títulos */
+h1, h2 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Centrando el contenido */
+.centrado {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: square;
+    padding: 0 20px;
+}
+
+ul ul {
+    list-style-type: circle;
+    margin-left: 15px;
+}
+
+/* Links estilizados */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Separador elegante */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #cbd5e1;
+    margin: 30px 0;
+}
+
+/* Mejor estructura del layout */
+body > div {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
