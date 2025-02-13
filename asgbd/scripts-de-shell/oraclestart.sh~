@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Variables de entorno
+export ORACLE_HOME=/opt/oracle-install
+export PATH=$ORACLE_HOME/bin:$PATH
+export ORACLE_SID=asir
+
+# Arrancar oracle
+sqlplus / as sysdba <<EOF
+startup;
+EOF
+
+# Comprobar que el listner de oracle esta activo
+#################################################################
+# lsncrtl stop						        #
+# lsncrtl start						        #
+# 							        #
+# while :						        #
+# do							        #
+#     comprueba=$(lsnrctl status | grep -i asir | wc -l)        #
+# 							        #
+#     if [ $comprueba -gt 0 ]; then			        #
+#         echo "YA ESTA EL LISTENER"			        #
+# 	sleep 2						        #
+# 	break						        #
+#     else						        #
+# 	echo "Todavia no esta el LISTNER"		        #
+# 	sleep 5						        #
+#     fi						        #
+# done							        #
+#################################################################

@@ -1,0 +1,33 @@
+#+INCLUDE: ../../../asgbd-template.org
+#+TITLE: Práctica /scripts/ =bash=
+#+STARTUP: overview
+
+\blankpage
+
+* /Scripts/ de inicio y parada de Oracle
+#+ATTR_LATEX: :options frame=single
+#+include: "oraclestart.sh" src bash -n
+#+ATTR_LATEX: :options frame=single
+#+include: "oraclestop.sh" src bash -n
+
+* Arrancar automáticamente Oracle cuando se inicie el servidor
+#+ATTR_LATEX: :options frame=single
+#+include: "arrancar-auto-en-inicio.sh" src bash -n
+
+* Crea usuarios de base de datos
+#+ATTR_LATEX: :options frame=single
+#+include: "nuevo-usuario-oracle.sh" src bash -n
+
+* Almacena información periódicamente en la base de datos
+#+ATTR_LATEX: :options frame=single
+#+include: "almacena-informacion.sh" src bash -n
+
+* Envía un correo periódicamente
+#+ATTR_LATEX: :options frame=single
+#+include: "enviar-correo.sh" src bash -n
+
+* /units/ de =systemd=
+#+latex: \textattachfile[color=0 0 1]{units.txt}{Adjunto fichero TXT} \newline
+
+* Fichero =/etc/crontab=
+#+latex: \textattachfile[color=0 0 1]{crontab.txt}{Adjunto fichero TXT} \newline

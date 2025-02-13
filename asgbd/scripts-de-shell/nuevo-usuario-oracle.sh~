@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# select username, account_status from dba_users where lock_date is not null | para saber si un usuario esta bloqueado
+# ALTER USER account ACCOUNT UNLOCK; | para desbloquear la cuenta
+
+# Script para crear nuevos usuarios de oracle
+
+nombre_usuario=$1
+contrasena_usuario=$2
+
+# comprobar si mete mas parametros de los que deberia
+parametos_introducidos=$#
+
+if [ "$parametos_introducidos" -ne 2 ]; then
+    echo "Crea un usuario nuevo de oracle, con permisos connect y resource."
+    echo "Si el usuario ya existe, lo desbloquea y le cambia la contraseña."
+    echo ""
+    echo "Uso: nuevo-usuario-oracle.sh <usuario> <contraseña>"
+fi
+
+
+comprobar_si_existe_usuario_oracle (){
+    
+    resultado_query=$(sqlplus -s / as sysdba<<EOF
+SELECT COUNT(*) FROM dba_users WHERE USERNAME = UPPER('${$nombre_usuario}');
+EXIT;
+EOF
+		  )
+
+    # recortar espacios en blanco
+    resultado_query=$(echo "$resultado_query" | xargs)
+
+    # Comprobamos a ver si existia o no en oracle el usuario que se quiere crear
+    if [ "$resultado_query" -gt 0 ]; then
+	# existe
+	return 1
+    else
+	# no existe
+	return 0
+    fi
+}
+
+comprobar_si_usuario_bloqueado (){
+    resultado_query_block=$(sqlplus -s / as sysdba<<EOF
+SELECT COUNT(*) FROM dba_users WHERE lock_date IS NOT NULL AND USERNAME = UPPER('${nombre_usuario}')
+EXIT;
+EOF
+			 )
+    if [ "$resultado_query_block" = 1 ]; then
+	# esta bloqueado
+	return 1
+    else
+	# no esta bloqueado
+	return 0
+    fi
+}
+
+
+crear_usuario_dentro_de_oracle (){
+    sqlplus -s / as sysdba<<EOF
+CREATE USER '${nombre_usuario}' IDENTIFIED AS '${contrasena_usuario}';
+EXIT;
+EOF
+    
+}
+
+resultado_funcion_usuario_block=$(comprobar_si_usuario_bloqueado)
+resultado_funcion_comprobar_usuario=$(comprobar_si_existe_usuario_oracle)
+
+
+if [ $resultado_funcion_usuario_block -eq 1 ]; then
+    echo "El usuario $nombre_usuario esta bloqueado"
+    sqlplus -s / as sysdba<<EOF
+ALTER USER '${nombre_usuario}' ACCOUNT UNLOCK;
+EXIT;
+EOF
+    echo "El usuario $nombre_usuario ha sido desbloqueado"    
+elif [ $resultado_funcion_comprobar_usuario -eq 1 ]; then
+    echo "El usuario $nombre_usuario YA existe"
+else
+    echo "El usuario $nombre_usuario NO EXISTE"
+    crear_usuario_dentro_de_oracle
+    echo "El usuario $nombre_usuario ha sido creado correctamente"
+fi  

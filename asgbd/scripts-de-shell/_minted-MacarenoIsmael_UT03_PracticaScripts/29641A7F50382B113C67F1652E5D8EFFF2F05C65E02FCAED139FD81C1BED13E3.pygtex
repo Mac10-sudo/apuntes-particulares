@@ -1,0 +1,54 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+\PYG{c+c1}{\PYGZsh{} Almacena información periódicamente en la base de datos}
+
+\PYG{c+c1}{\PYGZsh{} Variables de entorno para que chute sqlplus}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}SID}\PYG{o}{=}zilae
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}HOME}\PYG{o}{=}/opt/oracle\PYGZhy{}install
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{PATH}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}ORACLE\PYGZus{}HOME}/bin:\PYG{n+nv}{\PYGZdl{}PATH}
+
+\PYG{c+c1}{\PYGZsh{} Creacion de tablas}
+\PYG{c+c1}{\PYGZsh{} Quiero comprobar si existe o no la tabla}
+crear\PYGZus{}tablas\PYG{o}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Si se quita el SET HEADING OFF da fallo diciendo que no existe la tabla DF}
+\PYG{+w}{    }\PYG{n+nv}{tabla\PYGZus{}existe}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{SET HEADING OFF}
+\PYG{l+s}{SELECT COUNT(*) FROM all\PYGZus{}tables WHERE table\PYGZus{}name = \PYGZsq{}DF\PYGZsq{};}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{+w}{                }\PYG{k}{)}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}tabla\PYGZus{}existe}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}eq\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{create table DF(}
+\PYG{l+s}{hora varchar(40),}
+\PYG{l+s}{sistema varchar(40),}
+\PYG{l+s}{tamano varchar(40),}
+\PYG{l+s}{usado varchar(40),}
+\PYG{l+s}{montado varchar(40)}
+\PYG{l+s}{);}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ya existe la tabla DF\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{fi}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{n+nv}{hora\PYGZus{}actual}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}date\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}+\PYGZpc{}T\PYGZsq{}}\PYG{k}{)}
+
+crear\PYGZus{}tablas
+
+df\PYG{+w}{ }\PYGZhy{}k\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1, \PYGZdl{}2, \PYGZdl{}3, \PYGZdl{}6\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tail\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }+2\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }sistema\PYG{+w}{ }tamano\PYG{+w}{ }usado\PYG{+w}{ }montado\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{    }\PYG{n+nv}{insertar}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}INSERT INTO DF(hora, sistema, tamano, usado, montado) VALUES(}
+\PYG{l+s+s2}{    \PYGZsq{}}\PYG{n+nv}{\PYGZdl{}hora\PYGZus{}actual}\PYG{l+s+s2}{\PYGZsq{}, \PYGZsq{}}\PYG{n+nv}{\PYGZdl{}sistema}\PYG{l+s+s2}{\PYGZsq{}, \PYGZsq{}}\PYG{n+nv}{\PYGZdl{}tamano}\PYG{l+s+s2}{\PYGZsq{}, \PYGZsq{}}\PYG{n+nv}{\PYGZdl{}usado}\PYG{l+s+s2}{\PYGZsq{}, \PYGZsq{}}\PYG{n+nv}{\PYGZdl{}montado}\PYG{l+s+s2}{\PYGZsq{});\PYGZdq{}}
+
+\PYG{+w}{    }sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{\PYGZdl{}insertar}
+\PYG{l+s}{EOF}
+\PYG{k}{done}
+
+\PYG{c+c1}{\PYGZsh{} df \PYGZhy{}k | awk \PYGZsq{}\PYGZob{}print \PYGZdl{}1\PYGZcb{}\PYGZsq{} | tail \PYGZhy{}n +2}
+\PYG{c+c1}{\PYGZsh{} df \PYGZhy{}k | awk \PYGZsq{}\PYGZob{}print \PYGZdl{}2\PYGZcb{}\PYGZsq{} | tail \PYGZhy{}n +2}
+\PYG{c+c1}{\PYGZsh{} df \PYGZhy{}k | awk \PYGZsq{}\PYGZob{}print \PYGZdl{}3\PYGZcb{}\PYGZsq{} | tail \PYGZhy{}n +2}
+\PYG{c+c1}{\PYGZsh{} df \PYGZhy{}k | awk \PYGZsq{}\PYGZob{}print \PYGZdl{}6\PYGZcb{}\PYGZsq{} | tail \PYGZhy{}n +2}
+\end{Verbatim}

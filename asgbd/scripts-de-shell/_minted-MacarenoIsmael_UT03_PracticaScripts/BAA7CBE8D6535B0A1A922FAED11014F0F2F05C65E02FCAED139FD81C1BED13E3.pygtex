@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Variables de entorno}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}SID}\PYG{o}{=}asir
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}HOME}\PYG{o}{=}/opt/oracle\PYGZhy{}install
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{PATH}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}ORACLE\PYGZus{}HOME}/bin:\PYG{n+nv}{\PYGZdl{}PATH}
+
+\PYG{c+c1}{\PYGZsh{} Iniciar el listener}
+lsnrctl\PYG{+w}{ }start
+
+\PYG{c+c1}{\PYGZsh{} Arrancar oracle}
+sqlplus\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{+w}{ }\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{startup;}
+\PYG{l+s}{exit;}
+\PYG{l+s}{EOF}
+\end{Verbatim}

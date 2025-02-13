@@ -1,0 +1,14 @@
+#+INCLUDE: ../../../asgbd-template.org
+#+TITLE: Práctica /scripts/ =bash=
+#+STARTUP: overview
+
+\blankpage
+
+* /Scripts/ de inicio y parada de Oracle
+
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+#+include: oraclestart :only-contents t
+#+END_SRC
+
+

@@ -1,0 +1,108 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} select username, account\PYGZus{}status from dba\PYGZus{}users where lock\PYGZus{}date is not null | para saber si un usuario esta bloqueado}
+\PYG{c+c1}{\PYGZsh{} ALTER USER account ACCOUNT UNLOCK; | para desbloquear la cuenta}
+
+\PYG{c+c1}{\PYGZsh{} Script para crear nuevos usuarios de oracle}
+
+\PYG{c+c1}{\PYGZsh{} Variables de entorno}
+\PYG{c+c1}{\PYGZsh{} Variables de entorno}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}SID}\PYG{o}{=}zilae
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{ORACLE\PYGZus{}HOME}\PYG{o}{=}/opt/oracle\PYGZhy{}install
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{PATH}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}ORACLE\PYGZus{}HOME}/bin:\PYG{n+nv}{\PYGZdl{}PATH}
+
+
+\PYG{n+nv}{nombre\PYGZus{}usuario}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}1}
+\PYG{n+nv}{contrasena\PYGZus{}usuario}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}2}
+\PYG{n+nv}{pdb}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}pdzilae\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} comprobar si mete mas parametros de los que deberia}
+\PYG{n+nv}{parametos\PYGZus{}introducidos}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}\PYGZsh{}}
+
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}parametos\PYGZus{}introducidos}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Crea un usuario nuevo de oracle, con permisos connect y resource.\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Si el usuario ya existe, lo desbloquea y le cambia la contraseña.\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Uso: nuevo\PYGZhy{}usuario\PYGZhy{}oracle.sh \PYGZlt{}usuario\PYGZgt{} \PYGZlt{}contraseña\PYGZgt{}\PYGZdq{}}
+\PYG{+w}{    }sleep\PYG{+w}{ }\PYG{l+m}{10}
+\PYG{+w}{    }\PYG{n+nb}{exit}
+\PYG{k}{fi}
+
+
+comprobar\PYGZus{}si\PYGZus{}existe\PYGZus{}usuario\PYGZus{}oracle\PYG{+w}{ }\PYG{o}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nb}{local}\PYG{+w}{ }\PYG{n+nv}{nombre\PYGZus{}usuario}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nv}{resultado\PYGZus{}query}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF}
+\PYG{l+s}{SELECT COUNT(*) FROM dba\PYGZus{}users WHERE USERNAME = UPPER(\PYGZsq{}\PYGZdl{}\PYGZob{}nombre\PYGZus{}usuario\PYGZcb{}\PYGZsq{});}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{+w}{                   }\PYG{k}{)}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} recortar espacios en blanco}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}resultado\PYGZus{}query}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }xargs
+\PYG{o}{\PYGZcb{}}
+
+comprobar\PYGZus{}si\PYGZus{}usuario\PYGZus{}bloqueado\PYG{+w}{ }\PYG{o}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nv}{resultado\PYGZus{}query\PYGZus{}block}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF}
+\PYG{l+s}{SELECT COUNT(*) FROM dba\PYGZus{}users WHERE lock\PYGZus{}date IS NOT NULL AND USERNAME = UPPER(\PYGZsq{}\PYGZdl{}\PYGZob{}nombre\PYGZus{}usuario\PYGZcb{}\PYGZsq{})}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{+w}{                         }\PYG{k}{)}
+
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}resultado\PYGZus{}query\PYGZus{}block}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }xargs
+\PYG{o}{\PYGZcb{}}
+
+verificar\PYGZus{}pdb\PYG{o}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nv}{estado\PYGZus{}pdb}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF}
+\PYG{l+s}{SELECT OPEN\PYGZus{}MODE FROM v\PYGZbs{}\PYGZdl{}pdbs WHERE NAME = UPPER(\PYGZsq{}\PYGZdl{}\PYGZob{}pdb\PYGZcb{}\PYGZsq{});}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{+w}{              }\PYG{k}{)}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}estado\PYGZus{}pdb}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }xargs
+\PYG{o}{\PYGZcb{}}
+
+crear\PYGZus{}usuario\PYGZus{}dentro\PYGZus{}de\PYGZus{}oracle\PYG{+w}{ }\PYG{o}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nb}{local}\PYG{+w}{ }\PYG{n+nv}{estado\PYGZus{}pdb}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}verificar\PYGZus{}pdb\PYG{k}{)}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}estado\PYGZus{}pdb}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }!\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}READ WRITE\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{        }sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{ALTER PLUGGABLE DATABASE \PYGZdl{}\PYGZob{}pdb\PYGZcb{} OPEN;}
+\PYG{l+s}{EOF}
+\PYG{+w}{    }\PYG{k}{fi}
+\PYG{+w}{    }sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{ALTER SESSION SET CONTAINER=\PYGZdl{}\PYGZob{}pdb\PYGZcb{};}
+\PYG{l+s}{CREATE USER \PYGZdl{}\PYGZob{}nombre\PYGZus{}usuario\PYGZcb{} IDENTIFIED BY \PYGZdl{}\PYGZob{}contrasena\PYGZus{}usuario\PYGZcb{};}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{o}{\PYGZcb{}}
+
+desbloquea\PYGZus{}usu\PYG{o}{()\PYGZob{}}
+sqlplus\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }/\PYG{+w}{ }as\PYG{+w}{ }sysdba\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF}
+\PYG{l+s}{ALTER USER \PYGZsq{}\PYGZdl{}\PYGZob{}nombre\PYGZus{}usuario\PYGZcb{}\PYGZsq{} ACCOUNT UNLOCK;}
+\PYG{l+s}{EXIT;}
+\PYG{l+s}{EOF}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{n+nv}{resultado\PYGZus{}funcion\PYGZus{}comprobar\PYGZus{}usuario}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}comprobar\PYGZus{}si\PYGZus{}existe\PYGZus{}usuario\PYGZus{}oracle\PYG{k}{)}
+
+
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}resultado\PYGZus{}funcion\PYGZus{}comprobar\PYGZus{}usuario}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}gt\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}El usuario }\PYG{n+nv}{\PYGZdl{}nombre\PYGZus{}usuario}\PYG{l+s+s2}{ ya existe\PYGZdq{}}
+
+\PYG{+w}{    }\PYG{n+nv}{resultado\PYGZus{}funcion\PYGZus{}usuario\PYGZus{}block}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}comprobar\PYGZus{}si\PYGZus{}usuario\PYGZus{}bloqueado\PYG{k}{)}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}resultado\PYGZus{}funcion\PYGZus{}usuario\PYGZus{}block}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}eq\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}El usuario }\PYG{n+nv}{\PYGZdl{}nombre\PYGZus{}usuario}\PYG{l+s+s2}{ esta bloqueado\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Desbloqueando......\PYGZdq{}}
+\PYG{+w}{        }desbloquea\PYGZus{}usu
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}El usuario }\PYG{n+nv}{\PYGZdl{}nombre\PYGZus{}usuario}\PYG{l+s+s2}{ ha sido desbloqueado\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{fi}
+\PYG{k}{else}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}El usuario }\PYG{n+nv}{\PYGZdl{}nombre\PYGZus{}usuario}\PYG{l+s+s2}{ no existe\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Creando.....\PYGZdq{}}
+\PYG{+w}{    }crear\PYGZus{}usuario\PYGZus{}dentro\PYGZus{}de\PYGZus{}oracle
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}El usuario }\PYG{n+nv}{\PYGZdl{}nombre\PYGZus{}usuario}\PYG{l+s+s2}{ ha sido creado\PYGZdq{}}
+\PYG{k}{fi}
+\end{Verbatim}
