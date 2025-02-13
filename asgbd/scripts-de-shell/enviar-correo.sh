@@ -9,20 +9,22 @@ export PATH=$ORACLE_HOME/bin:$PATH
 
 sacar_informacion(){
     info=$(sqlplus -s / as sysdba<<EOF
-set colsep ,     -- separate columns with a comma
-set pagesize 0   -- No header rows
-set trimspool on -- remove trailing blanks
-set headsep off  -- this may or may not be useful...depends on your headings.
-set linesize X   -- X should be the sum of the column widths
-set numw X       -- X should be the length you want for numbers (avoid scientific notation on IDs)
+set colsep ,        -- Separate columns with a comma
+set pagesize 0      -- No headers, continuous output
+set trimspool on    -- Remove trailing blanks
+set headsep off     -- Ensure no additional header separation
+set linesize 1000   -- Adjust as needed for long lines
+set numwidth 15     -- Ensure numbers don’t use scientific notation
 
-spool myfile.csv
+spool myfile.csv    
+
 SELECT
 	sistema, avg(tamano), avg(usado), montado
 FROM
 	DF
 GROUP BY
       sistema, montado;
+
 EOF
     )
 
@@ -48,6 +50,8 @@ comprobacion_postfix
 
 programar_tarea(){
     cron_schedule="* * * * * /home/oracle/Documents/practica-scripts/enviar-correo.sh"
+
+    echo "$cron_schedule" >> /etc/crontab
 }
 
 programar_tarea

@@ -1,4 +1,4 @@
-#+INCLUDE: ~/repos/TemarioASIR/ASGBD/asgbd-template.org
+#+INCLUDE: ../../../asgbd-template.org
 #+TITLE: Práctica /scripts/ =bash=
 #+STARTUP: overview
 
@@ -28,7 +28,7 @@
 
 * /units/ de =systemd=
 #+ATTR_LATEX: :options frame=single
-#+include: "units.txt" src bash -n
+#+include: "units.service" src bash -n
 
 * Fichero =/etc/crontab=
 #+latex: \textattachfile[color=0 0 1]{crontab.txt}{Adjunto fichero TXT} \newline

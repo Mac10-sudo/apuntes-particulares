@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2025-02-13 Thu 12:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Práctica /scripts/ =bash=</title>
+<meta name="author" content="Ismael Macareno Chouikh" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Práctica <i>scripts</i> <code>bash</code></h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgade90a8">1. <i>Scripts</i> de inicio y parada de Oracle</a></li>
+<li><a href="#orgbc5e45e">2. Arrancar automáticamente Oracle cuando se inicie el servidor</a></li>
+<li><a href="#orgc7f900c">3. Crea usuarios de base de datos</a></li>
+<li><a href="#orga47f838">4. Almacena información periódicamente en la base de datos</a></li>
+<li><a href="#orgfd89d48">5. Envía un correo periódicamente</a></li>
+<li><a href="#org8b2fb1f">6. <i>units</i> de <code>systemd</code></a></li>
+<li><a href="#orgf2f87e7">7. Fichero <code>/etc/crontab</code></a></li>
+<li><a href="#org9747728">8. Web</a></li>
+</ul>
+</div>
+</div>
+<p>
+\blankpage
+</p>
+
+<div id="outline-container-orgade90a8" class="outline-2">
+<h2 id="orgade90a8"><span class="section-number-2">1.</span> <i>Scripts</i> de inicio y parada de Oracle</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Variables de entorno</span>
+<span class="linenr"> 4: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_SID</span>=asir
+<span class="linenr"> 5: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>=/opt/oracle-install
+<span class="linenr"> 6: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">PATH</span>=$<span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>/bin:$<span style="color: #499e4d; font-weight: bold;">PATH</span>
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Iniciar el listener</span>
+<span class="linenr"> 9: </span>lsnrctl start
+<span class="linenr">10: </span>
+<span class="linenr">11: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Arrancar oracle</span>
+<span class="linenr">12: </span>sqlplus / as sysdba &lt;&lt;EOF
+<span class="linenr">13: </span><span style="color: #ffa54f;">startup;</span>
+<span class="linenr">14: </span><span style="color: #ffa54f;">exit;</span>
+<span class="linenr">15: </span><span style="color: #ffa54f;">EOF</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr"> 2: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">variables de entorno</span>
+<span class="linenr"> 3: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_SID</span>=asir
+<span class="linenr"> 4: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>=/opt/oracle-install
+<span class="linenr"> 5: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">PATH</span>=$<span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>/bin:$<span style="color: #499e4d; font-weight: bold;">PATH</span>
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Parar oracle</span>
+<span class="linenr"> 8: </span>sqlplus / as sysdba &lt;&lt;EOF
+<span class="linenr"> 9: </span><span style="color: #ffa54f;">shutdown inmediante;</span>
+<span class="linenr">10: </span><span style="color: #ffa54f;">exit;</span>
+<span class="linenr">11: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Parar el listener</span>
+<span class="linenr">14: </span>lsnrctl stop
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc5e45e" class="outline-2">
+<h2 id="orgbc5e45e"><span class="section-number-2">2.</span> Arrancar automáticamente Oracle cuando se inicie el servidor</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">por si acaso, deshabilitamos SELinux para que no moleste</span>
+<span class="linenr"> 4: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">modificar /etc/selinux/config para hacerlo permanente</span>
+<span class="linenr"> 5: </span>setenforce 0
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">ORACLE_HOME del sistema</span>
+<span class="linenr"> 8: </span><span style="color: #499e4d; font-weight: bold;">valor_oracle_home</span>=$(<span style="color: #ff00ff;">env | grep ORACLE_HOME | cut -d "=" -f 2</span>)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">miro en oratab</span>
+<span class="linenr">11: </span><span style="color: #499e4d; font-weight: bold;">valor_oracle_home_en_oratab</span>=$(<span style="color: #ff00ff;">cat /etc/oratab | grep $valor_oracle_home | cut -d ":" -f 3</span>)
+<span class="linenr">12: </span>
+<span class="linenr">13: </span>
+<span class="linenr">14: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Habra que crear el fichero de logs si no existe</span>
+<span class="linenr">15: </span><span style="color: #499e4d; font-weight: bold;">directorio_de_logs</span>=<span style="color: #4d96b8;">"/home/alumno/logs"</span>
+<span class="linenr">16: </span><span style="color: #499e4d; font-weight: bold;">fichero_de_logs</span>=<span style="color: #4d96b8;">"/home/alumno/logs/oracle.log"</span>
+<span class="linenr">17: </span>mkdir -p <span style="color: #4d96b8;">"$directorio_de_logs"</span>
+<span class="linenr">18: </span>
+<span class="linenr">19: </span>
+<span class="linenr">20: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">tenia la fecha formateada con el echo normal, pero me apetece meter funciones</span>
+<span class="linenr">21: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#    </span><span style="color: #f62b4d; font-style: italic;">date "+%Y-%m-%d-%H:%M:%S" formato de fecha para "$fichero_de_logs"</span>
+<span class="linenr">22: </span><span style="color: #5377ad; font-weight: bold;">fechaformateada</span> (){
+<span class="linenr">23: </span>    date <span style="color: #4d96b8;">"+%Y-%m-%d-%H:%M:%S"</span>
+<span class="linenr">24: </span>}
+<span class="linenr">25: </span>
+<span class="linenr">26: </span>
+<span class="linenr">27: </span><span style="color: #b8574e; font-weight: bold;">if</span> [ -n <span style="color: #4d96b8;">"$valor_oracle_home_en_oratab"</span> ] &amp;&amp; [ $<span style="color: #499e4d; font-weight: bold;">valor_oracle_home_en_oratab</span> = <span style="color: #4d96b8;">"Y"</span> ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr">28: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Solicitud de arrancar Oracle"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">29: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Oracle arrancado porque /etc/oratab indica Y"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">30: </span>    sqlplus / as sysdba &lt;&lt;EOF
+<span class="linenr">31: </span><span style="color: #ffa54f;">startup;</span>
+<span class="linenr">32: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">33: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Oracle arrancado"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">34: </span><span style="color: #b8574e; font-weight: bold;">else</span>
+<span class="linenr">35: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Solicitud de arrancar Oracle"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">36: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Oracle arrancado porque /etc/oratab indica N"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">37: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Solicitud de parar Oracle"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>
+<span class="linenr">38: </span>    sqlplus / as sysdba &lt;&lt;EOF
+<span class="linenr">39: </span><span style="color: #ffa54f;">shutdown inmediate;</span>
+<span class="linenr">40: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">41: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$(</span><span style="color: #ff00ff;">fechaformteada</span><span style="color: #4d96b8;">) Oracle parado"</span> | tee -a <span style="color: #4d96b8;">"$fichero_de_logs"</span>    
+<span class="linenr">42: </span><span style="color: #b8574e; font-weight: bold;">fi</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7f900c" class="outline-2">
+<h2 id="orgc7f900c"><span class="section-number-2">3.</span> Crea usuarios de base de datos</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr">  1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr">  2: </span>
+<span class="linenr">  3: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">select username, account_status from dba_users where lock_date is not null | para saber si un usuario esta bloqueado</span>
+<span class="linenr">  4: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">ALTER USER account ACCOUNT UNLOCK; | para desbloquear la cuenta</span>
+<span class="linenr">  5: </span>
+<span class="linenr">  6: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Script para crear nuevos usuarios de oracle</span>
+<span class="linenr">  7: </span>
+<span class="linenr">  8: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Variables de entorno</span>
+<span class="linenr">  9: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Variables de entorno</span>
+<span class="linenr"> 10: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_SID</span>=zilae
+<span class="linenr"> 11: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>=/opt/oracle-install
+<span class="linenr"> 12: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">PATH</span>=$<span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>/bin:$<span style="color: #499e4d; font-weight: bold;">PATH</span>
+<span class="linenr"> 13: </span>
+<span class="linenr"> 14: </span>
+<span class="linenr"> 15: </span><span style="color: #499e4d; font-weight: bold;">nombre_usuario</span>=$<span style="color: #499e4d; font-weight: bold;">1</span>
+<span class="linenr"> 16: </span><span style="color: #499e4d; font-weight: bold;">contrasena_usuario</span>=$<span style="color: #499e4d; font-weight: bold;">2</span>
+<span class="linenr"> 17: </span><span style="color: #499e4d; font-weight: bold;">pdb</span>=<span style="color: #4d96b8;">"pdzilae"</span>
+<span class="linenr"> 18: </span>
+<span class="linenr"> 19: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">comprobar si mete mas parametros de los que deberia</span>
+<span class="linenr"> 20: </span><span style="color: #499e4d; font-weight: bold;">parametos_introducidos</span>=$<span style="color: #499e4d; font-weight: bold;">#</span>
+<span class="linenr"> 21: </span>
+<span class="linenr"> 22: </span><span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$parametos_introducidos"</span> -ne 2 ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr"> 23: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Crea un usuario nuevo de oracle, con permisos connect y resource."</span>
+<span class="linenr"> 24: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Si el usuario ya existe, lo desbloquea y le cambia la contrase&#241;a."</span>
+<span class="linenr"> 25: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">""</span>
+<span class="linenr"> 26: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Uso: nuevo-usuario-oracle.sh &lt;usuario&gt; &lt;contrase&#241;a&gt;"</span>
+<span class="linenr"> 27: </span>    sleep 10
+<span class="linenr"> 28: </span>    <span style="color: #b8574e; font-weight: bold;">exit</span>
+<span class="linenr"> 29: </span><span style="color: #b8574e; font-weight: bold;">fi</span>
+<span class="linenr"> 30: </span>
+<span class="linenr"> 31: </span>
+<span class="linenr"> 32: </span><span style="color: #5377ad; font-weight: bold;">comprobar_si_existe_usuario_oracle</span> (){
+<span class="linenr"> 33: </span>    <span style="color: #b8574e; font-weight: bold;">local</span> <span style="color: #499e4d; font-weight: bold;">nombre_usuario</span>=<span style="color: #4d96b8;">"$1"</span>
+<span class="linenr"> 34: </span>
+<span class="linenr"> 35: </span>    <span style="color: #499e4d; font-weight: bold;">resultado_query</span>=$(<span style="color: #ff00ff;">sqlplus -s / as sysdba&lt;&lt;EOF</span>
+<span class="linenr"> 36: </span><span style="color: #ffa54f;">SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF</span>
+<span class="linenr"> 37: </span><span style="color: #ffa54f;">SELECT COUNT(*) FROM dba_users WHERE USERNAME = UPPER('${nombre_usuario}');</span>
+<span class="linenr"> 38: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr"> 39: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 40: </span>                   )
+<span class="linenr"> 41: </span>
+<span class="linenr"> 42: </span>    <span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">recortar espacios en blanco</span>
+<span class="linenr"> 43: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$resultado_query"</span> | xargs
+<span class="linenr"> 44: </span>}
+<span class="linenr"> 45: </span>
+<span class="linenr"> 46: </span><span style="color: #5377ad; font-weight: bold;">comprobar_si_usuario_bloqueado</span> (){
+<span class="linenr"> 47: </span>    <span style="color: #499e4d; font-weight: bold;">resultado_query_block</span>=$(<span style="color: #ff00ff;">sqlplus -s / as sysdba&lt;&lt;EOF</span>
+<span class="linenr"> 48: </span><span style="color: #ffa54f;">SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF</span>
+<span class="linenr"> 49: </span><span style="color: #ffa54f;">SELECT COUNT(*) FROM dba_users WHERE lock_date IS NOT NULL AND USERNAME = UPPER('${nombre_usuario}')</span>
+<span class="linenr"> 50: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr"> 51: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 52: </span>                         )
+<span class="linenr"> 53: </span>
+<span class="linenr"> 54: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$resultado_query_block"</span> | xargs
+<span class="linenr"> 55: </span>}
+<span class="linenr"> 56: </span>
+<span class="linenr"> 57: </span><span style="color: #5377ad; font-weight: bold;">verificar_pdb</span>(){
+<span class="linenr"> 58: </span>    <span style="color: #499e4d; font-weight: bold;">estado_pdb</span>=$(<span style="color: #ff00ff;">sqlplus -s / as sysdba&lt;&lt;EOF</span>
+<span class="linenr"> 59: </span><span style="color: #ffa54f;">SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF</span>
+<span class="linenr"> 60: </span><span style="color: #ffa54f;">SELECT OPEN_MODE FROM v\$pdbs WHERE NAME = UPPER('${pdb}');</span>
+<span class="linenr"> 61: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr"> 62: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 63: </span>              )
+<span class="linenr"> 64: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$estado_pdb"</span> | xargs
+<span class="linenr"> 65: </span>}
+<span class="linenr"> 66: </span>
+<span class="linenr"> 67: </span><span style="color: #5377ad; font-weight: bold;">crear_usuario_dentro_de_oracle</span> (){
+<span class="linenr"> 68: </span>    <span style="color: #b8574e; font-weight: bold;">local</span> <span style="color: #499e4d; font-weight: bold;">estado_pdb</span>=$(<span style="color: #ff00ff;">verificar_pdb</span>)
+<span class="linenr"> 69: </span>    <span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$estado_pdb"</span> != <span style="color: #4d96b8;">"READ WRITE"</span> ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr"> 70: </span>        sqlplus -s / as sysdba&lt;&lt;EOF
+<span class="linenr"> 71: </span><span style="color: #ffa54f;">ALTER PLUGGABLE DATABASE ${pdb} OPEN;</span>
+<span class="linenr"> 72: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 73: </span>    <span style="color: #b8574e; font-weight: bold;">fi</span>
+<span class="linenr"> 74: </span>    sqlplus -s / as sysdba&lt;&lt;EOF
+<span class="linenr"> 75: </span><span style="color: #ffa54f;">ALTER SESSION SET CONTAINER=${pdb};</span>
+<span class="linenr"> 76: </span><span style="color: #ffa54f;">CREATE USER ${nombre_usuario} IDENTIFIED BY ${contrasena_usuario};</span>
+<span class="linenr"> 77: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr"> 78: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 79: </span>}
+<span class="linenr"> 80: </span>
+<span class="linenr"> 81: </span><span style="color: #5377ad; font-weight: bold;">desbloquea_usu</span>(){
+<span class="linenr"> 82: </span>sqlplus -s / as sysdba&lt;&lt;EOF
+<span class="linenr"> 83: </span><span style="color: #ffa54f;">ALTER USER '${nombre_usuario}' ACCOUNT UNLOCK;</span>
+<span class="linenr"> 84: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr"> 85: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr"> 86: </span>}
+<span class="linenr"> 87: </span>
+<span class="linenr"> 88: </span><span style="color: #499e4d; font-weight: bold;">resultado_funcion_comprobar_usuario</span>=$(<span style="color: #ff00ff;">comprobar_si_existe_usuario_oracle</span>)
+<span class="linenr"> 89: </span>
+<span class="linenr"> 90: </span>
+<span class="linenr"> 91: </span><span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$resultado_funcion_comprobar_usuario"</span> -gt 0 ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr"> 92: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"El usuario $nombre_usuario ya existe"</span>
+<span class="linenr"> 93: </span>
+<span class="linenr"> 94: </span>    <span style="color: #499e4d; font-weight: bold;">resultado_funcion_usuario_block</span>=$(<span style="color: #ff00ff;">comprobar_si_usuario_bloqueado</span>)
+<span class="linenr"> 95: </span>    <span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$resultado_funcion_usuario_block"</span> -eq 1 ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr"> 96: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"El usuario $nombre_usuario esta bloqueado"</span>
+<span class="linenr"> 97: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Desbloqueando......"</span>
+<span class="linenr"> 98: </span>        desbloquea_usu
+<span class="linenr"> 99: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"El usuario $nombre_usuario ha sido desbloqueado"</span>
+<span class="linenr">100: </span>    <span style="color: #b8574e; font-weight: bold;">fi</span>
+<span class="linenr">101: </span><span style="color: #b8574e; font-weight: bold;">else</span>
+<span class="linenr">102: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"El usuario $nombre_usuario no existe"</span>
+<span class="linenr">103: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Creando....."</span>
+<span class="linenr">104: </span>    crear_usuario_dentro_de_oracle
+<span class="linenr">105: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"El usuario $nombre_usuario ha sido creado"</span>
+<span class="linenr">106: </span><span style="color: #b8574e; font-weight: bold;">fi</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga47f838" class="outline-2">
+<h2 id="orga47f838"><span class="section-number-2">4.</span> Almacena información periódicamente en la base de datos</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr"> 2: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Almacena informaci&#243;n peri&#243;dicamente en la base de datos</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Variables de entorno para que chute sqlplus</span>
+<span class="linenr"> 5: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_SID</span>=zilae
+<span class="linenr"> 6: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>=/opt/oracle-install
+<span class="linenr"> 7: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">PATH</span>=$<span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>/bin:$<span style="color: #499e4d; font-weight: bold;">PATH</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Creacion de tablas</span>
+<span class="linenr">10: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Quiero comprobar si existe o no la tabla</span>
+<span class="linenr">11: </span><span style="color: #5377ad; font-weight: bold;">crear_tablas</span>(){
+<span class="linenr">12: </span>    <span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Si se quita el SET HEADING OFF da fallo diciendo que no existe la tabla DF</span>
+<span class="linenr">13: </span>    <span style="color: #499e4d; font-weight: bold;">tabla_existe</span>=$(<span style="color: #ff00ff;">sqlplus -s / as sysdba&lt;&lt;EOF</span>
+<span class="linenr">14: </span><span style="color: #ffa54f;">SET HEADING OFF</span>
+<span class="linenr">15: </span><span style="color: #ffa54f;">SELECT COUNT(*) FROM all_tables WHERE table_name = 'DF';</span>
+<span class="linenr">16: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr">17: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">18: </span>                )
+<span class="linenr">19: </span>    <span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$tabla_existe"</span> -eq 0 ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr">20: </span>sqlplus -s / as sysdba&lt;&lt;EOF
+<span class="linenr">21: </span><span style="color: #ffa54f;">create table DF(</span>
+<span class="linenr">22: </span><span style="color: #ffa54f;">hora varchar(40),</span>
+<span class="linenr">23: </span><span style="color: #ffa54f;">sistema varchar(40),</span>
+<span class="linenr">24: </span><span style="color: #ffa54f;">tamano varchar(40),</span>
+<span class="linenr">25: </span><span style="color: #ffa54f;">usado varchar(40),</span>
+<span class="linenr">26: </span><span style="color: #ffa54f;">montado varchar(40)</span>
+<span class="linenr">27: </span><span style="color: #ffa54f;">);</span>
+<span class="linenr">28: </span><span style="color: #ffa54f;">EXIT;</span>
+<span class="linenr">29: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">30: </span>
+<span class="linenr">31: </span>    <span style="color: #b8574e; font-weight: bold;">else</span>
+<span class="linenr">32: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Ya existe la tabla DF"</span>
+<span class="linenr">33: </span>    <span style="color: #b8574e; font-weight: bold;">fi</span>
+<span class="linenr">34: </span>}
+<span class="linenr">35: </span>
+<span class="linenr">36: </span><span style="color: #499e4d; font-weight: bold;">hora_actual</span>=$(<span style="color: #ff00ff;">date '+%T'</span>)
+<span class="linenr">37: </span>
+<span class="linenr">38: </span>crear_tablas
+<span class="linenr">39: </span>
+<span class="linenr">40: </span>df -k | awk <span style="color: #4d96b8;">'{print $1, $2, $3, $6}'</span> | tail -n +2 | <span style="color: #b8574e; font-weight: bold;">while </span><span style="color: #b8574e; font-weight: bold;">read</span> -r sistema tamano usado montado; <span style="color: #b8574e; font-weight: bold;">do</span>
+<span class="linenr">41: </span>    <span style="color: #499e4d; font-weight: bold;">insertar</span>=<span style="color: #4d96b8;">"INSERT INTO DF(hora, sistema, tamano, usado, montado) VALUES(</span>
+<span class="linenr">42: </span><span style="color: #4d96b8;">    '$hora_actual', '$sistema', '$tamano', '$usado', '$montado');"</span>
+<span class="linenr">43: </span>
+<span class="linenr">44: </span>    sqlplus -s / as sysdba&lt;&lt;EOF
+<span class="linenr">45: </span><span style="color: #ffa54f;">$insertar</span>
+<span class="linenr">46: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">47: </span><span style="color: #b8574e; font-weight: bold;">done</span>
+<span class="linenr">48: </span>
+<span class="linenr">49: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">df -k | awk '{print $1}' | tail -n +2</span>
+<span class="linenr">50: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">df -k | awk '{print $2}' | tail -n +2</span>
+<span class="linenr">51: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">df -k | awk '{print $3}' | tail -n +2</span>
+<span class="linenr">52: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">df -k | awk '{print $6}' | tail -n +2</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfd89d48" class="outline-2">
+<h2 id="orgfd89d48"><span class="section-number-2">5.</span> Envía un correo periódicamente</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;">#</span><span style="color: #f62b4d; font-style: italic;">!/bin/</span><span style="color: #b8574e; font-weight: bold;">bash</span>
+<span class="linenr"> 2: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Env&#237;a un correo peri&#243;dicamente</span>
+<span class="linenr"> 3: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Enviar a alvaro@alvarogonzalez.no-ip.biz</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">Variables de entorno</span>
+<span class="linenr"> 6: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_SID</span>=zilae
+<span class="linenr"> 7: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>=/opt/oracle-install
+<span class="linenr"> 8: </span><span style="color: #b8574e; font-weight: bold;">export</span> <span style="color: #499e4d; font-weight: bold;">PATH</span>=$<span style="color: #499e4d; font-weight: bold;">ORACLE_HOME</span>/bin:$<span style="color: #499e4d; font-weight: bold;">PATH</span>
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #5377ad; font-weight: bold;">sacar_informacion</span>(){
+<span class="linenr">11: </span>    <span style="color: #499e4d; font-weight: bold;">info</span>=$(<span style="color: #ff00ff;">sqlplus -s / as sysdba&lt;&lt;EOF</span>
+<span class="linenr">12: </span><span style="color: #ffa54f;">set colsep ,        -- Separate columns with a comma</span>
+<span class="linenr">13: </span><span style="color: #ffa54f;">set pagesize 0      -- No headers, continuous output</span>
+<span class="linenr">14: </span><span style="color: #ffa54f;">set trimspool on    -- Remove trailing blanks</span>
+<span class="linenr">15: </span><span style="color: #ffa54f;">set headsep off     -- Ensure no additional header separation</span>
+<span class="linenr">16: </span><span style="color: #ffa54f;">set linesize 1000   -- Adjust as needed for long lines</span>
+<span class="linenr">17: </span><span style="color: #ffa54f;">set numwidth 15     -- Ensure numbers don&#8217;t use scientific notation</span>
+<span class="linenr">18: </span>
+<span class="linenr">19: </span><span style="color: #ffa54f;">spool myfile.csv    </span>
+<span class="linenr">20: </span>
+<span class="linenr">21: </span><span style="color: #ffa54f;">SELECT</span>
+<span class="linenr">22: </span><span style="color: #ffa54f;">        sistema, avg(tamano), avg(usado), montado</span>
+<span class="linenr">23: </span><span style="color: #ffa54f;">FROM</span>
+<span class="linenr">24: </span><span style="color: #ffa54f;">        DF</span>
+<span class="linenr">25: </span><span style="color: #ffa54f;">GROUP BY</span>
+<span class="linenr">26: </span><span style="color: #ffa54f;">      sistema, montado;</span>
+<span class="linenr">27: </span>
+<span class="linenr">28: </span><span style="color: #ffa54f;">EOF</span>
+<span class="linenr">29: </span>    )
+<span class="linenr">30: </span>
+<span class="linenr">31: </span><span style="color: #f62b4d; font-size: 150%; font-style: italic;"># </span><span style="color: #f62b4d; font-style: italic;">echo "$info" | xargs | sed 's/\s+,/,/' myfile.csv </span>
+<span class="linenr">32: </span>}
+<span class="linenr">33: </span>
+<span class="linenr">34: </span>sacar_informacion
+<span class="linenr">35: </span>
+<span class="linenr">36: </span><span style="color: #5377ad; font-weight: bold;">comprobacion_postfix</span>(){
+<span class="linenr">37: </span>    <span style="color: #499e4d; font-weight: bold;">comando</span>=$(<span style="color: #ff00ff;">rpm -qa | grep postfix | wc -l</span>)
+<span class="linenr">38: </span>
+<span class="linenr">39: </span>    <span style="color: #b8574e; font-weight: bold;">if</span> [ <span style="color: #4d96b8;">"$comando"</span> -ge 1 ]; <span style="color: #b8574e; font-weight: bold;">then</span>
+<span class="linenr">40: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"POSTFIX esta instalado"</span>
+<span class="linenr">41: </span>    <span style="color: #b8574e; font-weight: bold;">else</span>
+<span class="linenr">42: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"POSTFIX NO esta instalado"</span>
+<span class="linenr">43: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Instalando....."</span>
+<span class="linenr">44: </span>        dnf install -y postfix mailx
+<span class="linenr">45: </span>        <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Se ha instalado POSTFIX"</span>
+<span class="linenr">46: </span>    <span style="color: #b8574e; font-weight: bold;">fi</span>
+<span class="linenr">47: </span>}
+<span class="linenr">48: </span>
+<span class="linenr">49: </span>comprobacion_postfix
+<span class="linenr">50: </span>
+<span class="linenr">51: </span><span style="color: #5377ad; font-weight: bold;">programar_tarea</span>(){
+<span class="linenr">52: </span>    <span style="color: #499e4d; font-weight: bold;">cron_schedule</span>=<span style="color: #4d96b8;">"* * * * * /home/oracle/Documents/practica-scripts/enviar-correo.sh"</span>
+<span class="linenr">53: </span>
+<span class="linenr">54: </span>    <span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"$cron_schedule"</span> &gt;&gt; /etc/crontab
+<span class="linenr">55: </span>}
+<span class="linenr">56: </span>
+<span class="linenr">57: </span>programar_tarea
+<span class="linenr">58: </span>
+<span class="linenr">59: </span><span style="color: #5377ad; font-weight: bold;">enviar_correo</span>(){
+<span class="linenr">60: </span><span style="color: #499e4d; font-weight: bold;">fichero_csv</span>=<span style="color: #4d96b8;">"/home/oracle/Documents/practica-scripts/myfile.csv"</span>
+<span class="linenr">61: </span><span style="color: #b8574e; font-weight: bold;">echo</span> <span style="color: #4d96b8;">"Informe de la tabla DF"</span> | mail -s <span style="color: #4d96b8;">"Ismael Macareno Chouikh"</span> -a <span style="color: #4d96b8;">"$fichero_csv"</span> alvaro@alvarogonzalez.no-ip.biz
+<span class="linenr">62: </span>}
+<span class="linenr">63: </span>
+<span class="linenr">64: </span>enviar_correo
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b2fb1f" class="outline-2">
+<h2 id="org8b2fb1f"><span class="section-number-2">6.</span> <i>units</i> de <code>systemd</code></h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+<pre class="src src-bash"><span class="linenr"> 1: </span>[Unit]
+<span class="linenr"> 2: </span><span style="color: #499e4d; font-weight: bold;">Description</span>=Oracle Practica Alvaro
+<span class="linenr"> 3: </span><span style="color: #499e4d; font-weight: bold;">After</span>=network.target
+<span class="linenr"> 4: </span><span style="color: #499e4d; font-weight: bold;">StartLimitIntervalSec</span>=0
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span>[Service]
+<span class="linenr"> 7: </span><span style="color: #499e4d; font-weight: bold;">Type</span>=forking
+<span class="linenr"> 8: </span><span style="color: #499e4d; font-weight: bold;">Restart</span>=always
+<span class="linenr"> 9: </span><span style="color: #499e4d; font-weight: bold;">RestartSec</span>=1
+<span class="linenr">10: </span><span style="color: #499e4d; font-weight: bold;">User</span>=oracle
+<span class="linenr">11: </span><span style="color: #499e4d; font-weight: bold;">ExecStart</span>=/home/oracle/Documents/practica-scripts/oraclestart.sh
+<span class="linenr">12: </span><span style="color: #499e4d; font-weight: bold;">ExecStop</span>=/home/oracle/Documents/practica-scripts/oraclestop.sh
+<span class="linenr">13: </span>
+<span class="linenr">14: </span>[Install]
+<span class="linenr">15: </span><span style="color: #499e4d; font-weight: bold;">WantedBy</span>=multi-user.target
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf2f87e7" class="outline-2">
+<h2 id="orgf2f87e7"><span class="section-number-2">7.</span> Fichero <code>/etc/crontab</code></h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</div>
+
+<div id="outline-container-org9747728" class="outline-2">
+<h2 id="org9747728"><span class="section-number-2">8.</span> Web</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Se pueden descargar todos los ficheros desde:
+</p>
+<ul class="org-ul">
+<li><a href="https://mac10-sudo.github.io/apuntes-particulares/asgbd.html">https://mac10-sudo.github.io/apuntes-particulares/asgbd.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Ismael Macareno Chouikh</p>
+<p class="date">Created: 2025-02-13 Thu 12:24</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
