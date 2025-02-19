@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{IfModule} \PYG{n+na}{mod\PYGZus{}userdir}\PYG{err}{.}\PYG{n+na}{c}\PYG{p}{\PYGZgt{}}
+        UserDir public\PYGZus{}html
+        UserDir disabled root
+
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{Directory} \PYG{err}{/}\PYG{n+na}{home}\PYG{err}{/*/}\PYG{n+na}{public\PYGZus{}html}\PYG{p}{\PYGZgt{}}
+                AllowOverride FileInfo AuthConfig Limit Indexes
+                Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{Limit} \PYG{n+na}{GET} \PYG{n+na}{POST} \PYG{n+na}{OPTIONS}\PYG{p}{\PYGZgt{}}
+                        Require all granted
+                \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{Limit}\PYG{p}{\PYGZgt{}}
+                \PYG{p}{\PYGZlt{}}\PYG{n+nt}{LimitExcept} \PYG{n+na}{GET} \PYG{n+na}{POST} \PYG{n+na}{OPTIONS}\PYG{p}{\PYGZgt{}}
+                        Require all denied
+                \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{LimitExcept}\PYG{p}{\PYGZgt{}}
+        \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{Directory}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{IfModule}\PYG{p}{\PYGZgt{}}
+
+\PYGZsh{} vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+\end{Verbatim}

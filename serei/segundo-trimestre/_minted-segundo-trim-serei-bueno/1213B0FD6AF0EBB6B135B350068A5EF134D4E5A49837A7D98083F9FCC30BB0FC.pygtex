@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYGZhy{}keygen\PYG{+w}{ }\PYGZhy{}t\PYG{+w}{ }rsa
+Generating\PYG{+w}{ }public/private\PYG{+w}{ }rsa\PYG{+w}{ }key\PYG{+w}{ }pair.
+Enter\PYG{+w}{ }file\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }which\PYG{+w}{ }to\PYG{+w}{ }save\PYG{+w}{ }the\PYG{+w}{ }key\PYG{+w}{ }\PYG{o}{(}/home/maka/.ssh/id\PYGZus{}rsa\PYG{o}{)}:
+Enter\PYG{+w}{ }passphrase\PYG{+w}{ }\PYG{o}{(}empty\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }no\PYG{+w}{ }passphrase\PYG{o}{)}:
+Enter\PYG{+w}{ }same\PYG{+w}{ }passphrase\PYG{+w}{ }again:
+Your\PYG{+w}{ }identification\PYG{+w}{ }has\PYG{+w}{ }been\PYG{+w}{ }saved\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }/home/maka/.ssh/id\PYGZus{}rsa.
+Your\PYG{+w}{ }public\PYG{+w}{ }key\PYG{+w}{ }has\PYG{+w}{ }been\PYG{+w}{ }saved\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }/home/maka/.ssh/id\PYGZus{}rsa.pub.
+The\PYG{+w}{ }key\PYG{+w}{ }fingerprint\PYG{+w}{ }is:
+\PYG{l+m}{30}:c2:99:66:79:3b:1a:93:d0:aa:13:67:65:7d:47:20\PYG{+w}{ }maka@ubuntu201
+The\PYG{+w}{ }key\PYG{err}{\PYGZsq{}}s\PYG{+w}{ }randomart\PYG{+w}{ }image\PYG{+w}{ }is:
++\PYGZhy{}\PYGZhy{}\PYG{o}{[}\PYG{+w}{ }RSA\PYG{+w}{ }\PYG{l+m}{2048}\PYG{o}{]}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\PYG{p}{|}\PYG{+w}{      }E\PYG{+w}{ }...\PYG{+w}{      }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{   }\PYG{n+nv}{o}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }.\PYG{+w}{ }.\PYG{+w}{       }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{  }.\PYG{+w}{ }\PYGZpc{}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }.\PYG{+w}{ }.\PYG{+w}{      }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{   }B\PYG{+w}{ }+\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }.\PYG{+w}{       }\PYG{p}{|}
+\PYG{p}{|}.\PYG{+w}{ }+\PYG{+w}{ }+\PYG{+w}{ }o\PYG{+w}{ }S\PYG{+w}{        }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{   }+\PYG{+w}{ }.\PYG{+w}{         }\PYG{p}{|}
+\PYG{p}{|}o\PYG{+w}{   }.\PYG{+w}{            }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{ }.\PYG{+w}{               }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{                 }\PYG{p}{|}
++\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\end{Verbatim}

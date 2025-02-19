@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{set}\PYG{+w}{ }dns:order\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}inet6 inet\PYGZdq{}}
+\PYG{n+nb}{set}\PYG{+w}{ }ssl:verify\PYGZhy{}certificate\PYG{+w}{ }no
+\end{Verbatim}

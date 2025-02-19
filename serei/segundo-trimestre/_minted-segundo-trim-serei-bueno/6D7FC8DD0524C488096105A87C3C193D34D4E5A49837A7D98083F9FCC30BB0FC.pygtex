@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} interfaces(5) file used by ifup(8) and ifdown(8)}
+auto\PYG{+w}{ }lo
+iface\PYG{+w}{ }lo\PYG{+w}{ }inet\PYG{+w}{ }loopback
+
+auto\PYG{+w}{ }eth0
+allow\PYGZhy{}hotplug\PYG{+w}{ }eth0
+iface\PYG{+w}{ }eth0\PYG{+w}{ }inet\PYG{+w}{ }dhcp
+
+
+auto\PYG{+w}{ }eth0:1
+allow\PYGZhy{}hotplug\PYG{+w}{ }eth0:1
+iface\PYG{+w}{ }eth0:1\PYG{+w}{ }inet\PYG{+w}{ }static
+\PYG{+w}{        }address\PYG{+w}{ }\PYG{l+m}{10}.0.1.10
+\PYG{+w}{        }netmask\PYG{+w}{ }\PYG{l+m}{255}.255.255.0
+
+auto\PYG{+w}{ }eth0:2
+allow\PYGZhy{}hotplug\PYG{+w}{ }eth0:2
+iface\PYG{+w}{ }eth0:2\PYG{+w}{ }inet\PYG{+w}{ }static
+\PYG{+w}{        }address\PYG{+w}{ }\PYG{l+m}{172}.26.1.10
+\PYG{+w}{        }netmask\PYG{+w}{ }\PYG{l+m}{255}.255.0.0
+\end{Verbatim}

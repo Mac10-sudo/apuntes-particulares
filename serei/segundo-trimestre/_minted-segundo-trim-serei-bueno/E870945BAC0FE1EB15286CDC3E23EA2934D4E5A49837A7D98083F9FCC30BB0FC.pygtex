@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Allow anonymous FTP? (Disabled by default)}
+\PYG{n+nv}{anonymous\PYGZus{}enable}\PYG{o}{=}YES
+\end{Verbatim}

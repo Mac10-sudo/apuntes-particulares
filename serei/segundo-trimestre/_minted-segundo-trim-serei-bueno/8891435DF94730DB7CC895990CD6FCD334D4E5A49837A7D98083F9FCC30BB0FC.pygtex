@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+root@ubuntu101:/var/www\PYGZsh{}\PYG{+w}{ }mkdir\PYG{+w}{ }puerto8080
+root@ubuntu101:/var/www\PYGZsh{}\PYG{+w}{ }mkdir\PYG{+w}{ }puerto8081
+\end{Verbatim}

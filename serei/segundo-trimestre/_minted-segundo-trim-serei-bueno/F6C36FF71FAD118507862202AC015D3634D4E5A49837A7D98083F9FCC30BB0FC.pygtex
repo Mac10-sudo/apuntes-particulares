@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu3:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYG{+w}{ }maka@172.20.10.5
+The\PYG{+w}{ }authenticity\PYG{+w}{ }of\PYG{+w}{ }host\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}172.20.10.5 (172.20.10.5)\PYGZsq{}}\PYG{+w}{ }can\PYG{l+s+s1}{\PYGZsq{}t be established.}
+\PYG{l+s+s1}{ECDSA key fingerprint is e6:cf:d5:13:d4:cf:7e:b7:9a:01:6c:86:c6:23:6f:75.}
+\PYG{l+s+s1}{Are you sure you want to continue connecting (yes/no)? yes}
+\PYG{l+s+s1}{Warning: Permanently added \PYGZsq{}}\PYG{l+m}{172}.20.10.5\PYG{l+s+s1}{\PYGZsq{} (ECDSA) to the list of known hosts.}
+\PYG{l+s+s1}{maka@172.20.10.5\PYGZsq{}}s\PYG{+w}{ }password:
+Welcome\PYG{+w}{ }to\PYG{+w}{ }Ubuntu\PYG{+w}{ }\PYG{l+m}{14}.04.6\PYG{+w}{ }LTS\PYG{+w}{ }\PYG{o}{(}GNU/Linux\PYG{+w}{ }\PYG{l+m}{4}.4.0\PYGZhy{}142\PYGZhy{}generic\PYG{+w}{ }x86\PYGZus{}64\PYG{o}{)}
+
+\PYG{+w}{ }*\PYG{+w}{ }Documentation:\PYG{+w}{  }https://help.ubuntu.com/
+
+Your\PYG{+w}{ }Hardware\PYG{+w}{ }Enablement\PYG{+w}{ }Stack\PYG{+w}{ }\PYG{o}{(}HWE\PYG{o}{)}\PYG{+w}{ }is\PYG{+w}{ }supported\PYG{+w}{ }\PYG{k}{until}\PYG{+w}{ }April\PYG{+w}{ }\PYG{l+m}{2019}.
+
+The\PYG{+w}{ }programs\PYG{+w}{ }included\PYG{+w}{ }with\PYG{+w}{ }the\PYG{+w}{ }Ubuntu\PYG{+w}{ }system\PYG{+w}{ }are\PYG{+w}{ }free\PYG{+w}{ }software\PYG{p}{;}
+the\PYG{+w}{ }exact\PYG{+w}{ }distribution\PYG{+w}{ }terms\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }each\PYG{+w}{ }program\PYG{+w}{ }are\PYG{+w}{ }described\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }the
+individual\PYG{+w}{ }files\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }/usr/share/doc/*/copyright.
+
+Ubuntu\PYG{+w}{ }comes\PYG{+w}{ }with\PYG{+w}{ }ABSOLUTELY\PYG{+w}{ }NO\PYG{+w}{ }WARRANTY,\PYG{+w}{ }to\PYG{+w}{ }the\PYG{+w}{ }extent\PYG{+w}{ }permitted\PYG{+w}{ }by
+applicable\PYG{+w}{ }law.
+
+maka@ubuntu2:\PYGZti{}\PYGZdl{}
+\end{Verbatim}

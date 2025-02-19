@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+X11Forwarding\PYG{+w}{ }yes
+X11DisplayOffset\PYG{+w}{ }\PYG{l+m}{10}
+PrintMotd\PYG{+w}{ }no
+PrintLastLog\PYG{+w}{ }yes
+TCPKeepAlive\PYG{+w}{ }yes
+\PYG{c+c1}{\PYGZsh{}UseLogin no}
+\end{Verbatim}

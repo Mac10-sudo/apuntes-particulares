@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@\PYG{+w}{    }WARNING:\PYG{+w}{ }REMOTE\PYG{+w}{ }HOST\PYG{+w}{ }IDENTIFICATION\PYG{+w}{ }HAS\PYG{+w}{ }CHANGED!\PYG{+w}{     }@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT\PYG{+w}{ }IS\PYG{+w}{ }POSSIBLE\PYG{+w}{ }THAT\PYG{+w}{ }SOMEONE\PYG{+w}{ }IS\PYG{+w}{ }DOING\PYG{+w}{ }SOMETHING\PYG{+w}{ }NASTY!
+Someone\PYG{+w}{ }could\PYG{+w}{ }be\PYG{+w}{ }eavesdropping\PYG{+w}{ }on\PYG{+w}{ }you\PYG{+w}{ }right\PYG{+w}{ }now\PYG{+w}{ }\PYG{o}{(}man\PYGZhy{}in\PYGZhy{}the\PYGZhy{}middle\PYG{+w}{ }attack\PYG{o}{)}!
+It\PYG{+w}{ }is\PYG{+w}{ }also\PYG{+w}{ }possible\PYG{+w}{ }that\PYG{+w}{ }a\PYG{+w}{ }host\PYG{+w}{ }key\PYG{+w}{ }has\PYG{+w}{ }just\PYG{+w}{ }been\PYG{+w}{ }changed.
+The\PYG{+w}{ }fingerprint\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }the\PYG{+w}{ }RSA\PYG{+w}{ }key\PYG{+w}{ }sent\PYG{+w}{ }by\PYG{+w}{ }the\PYG{+w}{ }remote\PYG{+w}{ }host\PYG{+w}{ }is
+ec:ed:1e:48:f1:8d:22:4e:e2:dc:58:e1:c6:b0:f7:d0.
+Please\PYG{+w}{ }contact\PYG{+w}{ }your\PYG{+w}{ }system\PYG{+w}{ }administrator.
+Add\PYG{+w}{ }correct\PYG{+w}{ }host\PYG{+w}{ }key\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }/home/maka/.ssh/known\PYGZus{}hosts\PYG{+w}{ }to\PYG{+w}{ }get\PYG{+w}{ }rid\PYG{+w}{ }of\PYG{+w}{ }this\PYG{+w}{ }message.
+Offending\PYG{+w}{ }ECDSA\PYG{+w}{ }key\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }/home/maka/.ssh/known\PYGZus{}hosts:3
+\PYG{+w}{  }remove\PYG{+w}{ }with:\PYG{+w}{ }ssh\PYGZhy{}keygen\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}/home/maka/.ssh/known\PYGZus{}hosts\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}R\PYG{+w}{ }\PYG{l+m}{172}.20.10.5
+RSA\PYG{+w}{ }host\PYG{+w}{ }key\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{l+m}{172}.20.10.5\PYG{+w}{ }has\PYG{+w}{ }changed\PYG{+w}{ }and\PYG{+w}{ }you\PYG{+w}{ }have\PYG{+w}{ }requested\PYG{+w}{ }strict\PYG{+w}{ }checking.
+Host\PYG{+w}{ }key\PYG{+w}{ }verification\PYG{+w}{ }failed.
+\end{Verbatim}

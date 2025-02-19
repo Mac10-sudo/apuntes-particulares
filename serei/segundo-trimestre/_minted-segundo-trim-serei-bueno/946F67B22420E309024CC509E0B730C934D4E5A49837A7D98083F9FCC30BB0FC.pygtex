@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+root@ubuntu101:/etc/apache2/sites\PYGZhy{}available\PYGZsh{}\PYG{+w}{ }cp\PYG{+w}{ }\PYG{l+m}{000}\PYGZhy{}default.conf\PYG{+w}{ }puerto8080.conf
+root@ubuntu101:/etc/apache2/sites\PYGZhy{}available\PYGZsh{}\PYG{+w}{ }cp\PYG{+w}{ }\PYG{l+m}{000}\PYGZhy{}default.conf\PYG{+w}{ }puerto8081.conf
+\end{Verbatim}

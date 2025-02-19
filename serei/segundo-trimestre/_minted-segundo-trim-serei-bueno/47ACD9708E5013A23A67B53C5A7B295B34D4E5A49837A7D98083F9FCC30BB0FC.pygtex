@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYGZhy{}add\PYG{+w}{ }\PYGZhy{}l
+\PYG{l+m}{2048}\PYG{+w}{ }6c:33:c5:1d:58:28:32:17:3a:c1:30:8c:48:62:dc:07\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase\PYG{+w}{ }\PYG{o}{(}RSA\PYG{o}{)}
+\PYG{l+m}{2048}\PYG{+w}{ }\PYG{l+m}{30}:c2:99:66:79:3b:1a:93:d0:aa:13:67:65:7d:47:20\PYG{+w}{ }maka@ubuntu201\PYG{+w}{ }\PYG{o}{(}RSA\PYG{o}{)}
+\end{Verbatim}

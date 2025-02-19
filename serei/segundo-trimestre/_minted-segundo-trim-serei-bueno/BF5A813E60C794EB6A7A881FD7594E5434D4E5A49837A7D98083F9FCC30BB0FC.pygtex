@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}   RekeyLimit 1G 1h}
+\PYG{+w}{    }SendEnv\PYG{+w}{ }LANG\PYG{+w}{ }LC\PYGZus{}*
+\PYG{+w}{    }HashKnownHosts\PYG{+w}{ }no
+\end{Verbatim}

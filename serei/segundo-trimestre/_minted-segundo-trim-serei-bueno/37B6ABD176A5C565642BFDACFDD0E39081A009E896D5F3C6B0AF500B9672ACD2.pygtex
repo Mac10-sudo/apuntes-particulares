@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{Directory} \PYG{err}{/}\PYG{n+na}{var}\PYG{err}{/}\PYG{n+na}{www}\PYG{p}{/\PYGZgt{}}
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{Directory}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

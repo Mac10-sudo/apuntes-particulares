@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu2:\PYGZti{}/.ssh\PYGZdl{}\PYG{+w}{ }cat\PYG{+w}{ }known\PYGZus{}hosts
+\PYG{p}{|}\PYG{l+m}{1}\PYG{p}{|}VJm5fgA1jJBxCHzMjP+651QexPY\PYG{o}{=}\PYG{p}{|}\PYG{n+nv}{SsSzyK9hTHUzxSpDMeWhlGgznuk}\PYG{o}{=}\PYG{+w}{ }ecdsa\PYGZhy{}sha2\PYGZhy{}nistp256\PYG{+w}{ }AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNfC3VlFMn7jXU61ITQBxbRBRTv8E5Z/hNokk5W12Hgac
+\PYG{n+nv}{7CB2ErfSGex08oqOJQtLUXfLYjruHe8h8XBy7UKVJg}\PYG{o}{=}
+\end{Verbatim}

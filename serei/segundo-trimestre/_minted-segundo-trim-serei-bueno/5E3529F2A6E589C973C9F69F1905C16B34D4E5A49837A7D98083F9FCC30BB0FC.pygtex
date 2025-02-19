@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+root@ubuntu101:/var/www/html\PYGZsh{}\PYG{+w}{ }mv\PYG{+w}{ }index.html\PYG{+w}{ }index\PYGZhy{}cambiado.html
+root@ubuntu101:/var/www/html\PYGZsh{}\PYG{+w}{ }ls\PYG{+w}{ }\PYGZhy{}la
+total\PYG{+w}{ }\PYG{l+m}{28}
+drwxr\PYGZhy{}xr\PYGZhy{}x\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }root\PYG{+w}{ }root\PYG{+w}{      }\PYG{l+m}{4096}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{19}\PYG{+w}{ }\PYG{l+m}{13}:12\PYG{+w}{ }.
+drwxr\PYGZhy{}xr\PYGZhy{}x\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }root\PYG{+w}{ }root\PYG{+w}{      }\PYG{l+m}{4096}\PYG{+w}{ }nov\PYG{+w}{  }\PYG{l+m}{7}\PYG{+w}{ }\PYG{l+m}{08}:58\PYG{+w}{ }..
+\PYGZhy{}rw\PYGZhy{}r\PYGZhy{}\PYGZhy{}r\PYGZhy{}\PYGZhy{}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }root\PYG{+w}{ }root\PYG{+w}{     }\PYG{l+m}{11494}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{19}\PYG{+w}{ }\PYG{l+m}{13}:08\PYG{+w}{ }index\PYGZhy{}cambiado.html
+\PYGZhy{}rw\PYGZhy{}r\PYGZhy{}\PYGZhy{}r\PYGZhy{}\PYGZhy{}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }root\PYG{+w}{ }root\PYG{+w}{        }\PYG{l+m}{21}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{11}\PYG{+w}{ }\PYG{l+m}{09}:29\PYG{+w}{ }prueba.php
+drwxr\PYGZhy{}xr\PYGZhy{}x\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }root\PYG{+w}{ }www\PYGZhy{}data\PYG{+w}{  }\PYG{l+m}{4096}\PYG{+w}{ }nov\PYG{+w}{  }\PYG{l+m}{7}\PYG{+w}{ }\PYG{l+m}{09}:08\PYG{+w}{ }webmail
+root@ubuntu101:/var/www/html\PYGZsh{}\PYG{+w}{ }service\PYG{+w}{ }apache2\PYG{+w}{ }reload
+\PYG{+w}{ }*\PYG{+w}{ }Reloading\PYG{+w}{ }web\PYG{+w}{ }server\PYG{+w}{ }apache2\PYG{+w}{                                                                                             }*
+\end{Verbatim}

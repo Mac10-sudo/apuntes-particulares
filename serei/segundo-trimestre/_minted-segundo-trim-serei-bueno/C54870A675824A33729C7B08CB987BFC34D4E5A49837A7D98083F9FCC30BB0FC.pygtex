@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ls\PYG{+w}{ }\PYGZhy{}la\PYG{+w}{ }.ssh/
+total\PYG{+w}{ }\PYG{l+m}{20}
+drwx\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYG{+w}{  }\PYG{l+m}{2}\PYG{+w}{ }maka\PYG{+w}{ }maka\PYG{+w}{ }\PYG{l+m}{4096}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{18}:35\PYG{+w}{ }.
+drwxr\PYGZhy{}xr\PYGZhy{}x\PYG{+w}{ }\PYG{l+m}{19}\PYG{+w}{ }maka\PYG{+w}{ }maka\PYG{+w}{ }\PYG{l+m}{4096}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{18}:32\PYG{+w}{ }..
+\PYGZhy{}rw\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYG{+w}{  }\PYG{l+m}{1}\PYG{+w}{ }maka\PYG{+w}{ }maka\PYG{+w}{ }\PYG{l+m}{1679}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{18}:35\PYG{+w}{ }id\PYGZus{}rsa
+\PYGZhy{}rw\PYGZhy{}r\PYGZhy{}\PYGZhy{}r\PYGZhy{}\PYGZhy{}\PYG{+w}{  }\PYG{l+m}{1}\PYG{+w}{ }maka\PYG{+w}{ }maka\PYG{+w}{  }\PYG{l+m}{396}\PYG{+w}{ }feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{18}:35\PYG{+w}{ }id\PYGZus{}rsa.pub
+\PYGZhy{}rw\PYGZhy{}r\PYGZhy{}\PYGZhy{}r\PYGZhy{}\PYGZhy{}\PYG{+w}{  }\PYG{l+m}{1}\PYG{+w}{ }maka\PYG{+w}{ }maka\PYG{+w}{  }\PYG{l+m}{444}\PYG{+w}{ }dic\PYG{+w}{  }\PYG{l+m}{9}\PYG{+w}{ }\PYG{l+m}{09}:39\PYG{+w}{ }known\PYGZus{}hosts
+\end{Verbatim}

@@ -1,0 +1,1750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+    <head>
+	<!-- 2025-02-19 Wed 01:21 -->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+	<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+	<title>Apuntes Segunda Evaluación - SEREI</title>
+<meta name="author" content="Ismael Macareno Chouikh" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Apuntes Segunda Evaluación - SEREI</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd8f9c8e">1. FTP</a>
+<ul>
+<li><a href="#org2c8c4a5">1.1. vsftpd</a>
+<ul>
+<li><a href="#orga3de245">1.1.1. Instalación</a></li>
+<li><a href="#org3bc66f5">1.1.2. Configuración</a></li>
+<li><a href="#orgcf7ce54">1.1.3. <code>chroot</code></a></li>
+<li><a href="#orgf2a5722">1.1.4. Grupos de usuario para <code>ftp</code></a></li>
+<li><a href="#orgb09fdd9">1.1.5. Crear usuarios para <code>ftp</code></a></li>
+<li><a href="#orgfe5fda3">1.1.6. Usuario anónimo</a></li>
+</ul>
+</li>
+<li><a href="#orgc365bcc">1.2. FTP sobre SSL</a>
+<ul>
+<li><a href="#orgd97613d">1.2.1. Integrar seguridad <code>SSL</code> a <code>FTP</code></a></li>
+<li><a href="#org72fc3c7">1.2.2. Generar un certificado <code>SSL</code> para <code>FTP</code></a></li>
+</ul>
+</li>
+<li><a href="#org5eafb2c">1.3. <i>Filezilla Server</i></a>
+<ul>
+<li><a href="#org6d7bebe">1.3.1. Instalación de <i>Filezilla Server</i></a></li>
+<li><a href="#orgc1314cb">1.3.2. Configuración de <i>Filezilla Server</i></a></li>
+<li><a href="#orgb5b0f28">1.3.3. Conexión desde un cliente</a></li>
+<li><a href="#orgfe28778">1.3.4. Configuración del servidor</a></li>
+<li><a href="#org49d84ef">1.3.5. Conexión segura por SSL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2fd369e">2. SSH</a>
+<ul>
+<li><a href="#org4ea80dc">2.1. <code>Telnet</code></a></li>
+<li><a href="#orga0a6b46">2.2. Ficheros relevantes</a></li>
+<li><a href="#org715544e">2.3. Instalación del servidor <code>openssh</code></a></li>
+<li><a href="#org0e97dd9">2.4. Ver la dirección en <code>known_hosts</code> en vez de el <code>hash</code></a></li>
+<li><a href="#orgb227eab">2.5. Eliminar error intento ataque Ddos</a></li>
+<li><a href="#org95c5a6f">2.6. Conexión por clave pública</a>
+<ul>
+<li><a href="#org3960fde">2.6.1. Configuración del servidor</a></li>
+</ul>
+</li>
+<li><a href="#org577730d">2.7. Directorio <code>$HOME/.ssh/</code></a></li>
+<li><a href="#orgcf4ed08">2.8. Algoritmo de cifrado</a></li>
+<li><a href="#orgf12e5c1">2.9. <code>SSH-Agent</code></a></li>
+<li><a href="#orga0525dd">2.10. Windows: <code>ssh</code>, claves y <code>ssh-agent</code></a>
+<ul>
+<li><a href="#org42764ed">2.10.1. Putty</a></li>
+<li><a href="#orge3059c2">2.10.2. MobaXterm</a></li>
+</ul>
+</li>
+<li><a href="#org36fd4a5">2.11. Cluster <code>ssh</code></a>
+<ul>
+<li><a href="#org33bc457">2.11.1. <span class="todo TODO">TODO</span> Clusters</a></li>
+<li><a href="#org0106353">2.11.2. <span class="todo TODO">TODO</span> <i>Tags</i></a></li>
+</ul>
+</li>
+<li><a href="#org4e3327d">2.12. Entorno gráfico</a>
+<ul>
+<li><a href="#orgf663702">2.12.1. GNU/Linux</a></li>
+<li><a href="#org6f095e0">2.12.2. <i>Microsoft Windows</i></a></li>
+</ul>
+</li>
+<li><a href="#org5bfa1d4">2.13. Tunelización</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+\blankpage
+</p>
+
+<div id="outline-container-orgd8f9c8e" class="outline-2">
+<h2 id="orgd8f9c8e"><span class="section-number-2">1.</span> FTP</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2c8c4a5" class="outline-3">
+<h3 id="org2c8c4a5"><span class="section-number-3">1.1.</span> vsftpd</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orga3de245" class="outline-4">
+<h4 id="orga3de245"><span class="section-number-4">1.1.1.</span> Instalación</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Para instalar cualquier tipo de paquete en una distribución Ubuntu tendremos que usar las siguientes instrucciones:
+</p>
+<ul class="org-ul">
+<li><code>sudo apt-get update</code></li>
+<li><code>sudo apt-get install vsftpd</code></li>
+</ul>
+
+
+<p>
+Podremos comprobar que el paquete está instalado mediante el uso de la instrucción <code>netstat -putona | grep -i vsftpd</code>
+</p>
+
+<p>
+También se podrá comprobar accediendo desde nuestro navegador web a <code>ftp://localhost</code>
+</p>
+
+
+<div id="org0a436a8" class="figure">
+<p><img src="./media/ftp-1.png" alt="ftp-1.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3bc66f5" class="outline-4">
+<h4 id="org3bc66f5"><span class="section-number-4">1.1.2.</span> Configuración</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Para configurar aspectos de <code>vsftpd</code> lo que tendremos que hacer será modificar el fichero <code>/etc/vsftpd.conf</code>
+</p>
+
+<p>
+Como primera configuración lo que haremos será descomentar la línea 14 del fichero la cuál contiene <code>listen=YES</code> para que así cuando se inicie el sistema ftp se inicie con él.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">daemon started from an initscript.</span>
+<span style="color: #ff6347;">listen</span>=YES
+</pre>
+</div>
+
+<p>
+Luego también descomentaremos las líneas 26, 29 y 33
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Uncomment this to allow local users to log in.</span>
+<span style="color: #ff6347;">local_enable</span>=YES <span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Conexion con los usuarios locales del servidor</span>
+<span style="color: #888a85; font-size: 150%;">#</span>
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Uncomment this to enable any form of FTP write command.</span>
+<span style="color: #ff6347;">write_enable</span>=YES <span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Los usuarios podr&#225;n escribir y descargar cosas</span>
+<span style="color: #888a85; font-size: 150%;">#</span>
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Default umask for local users is 077. You may wish to change this to 022,</span>
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">if your users expect that (022 is used by most other ftpd's)</span>
+<span style="color: #ff6347;">local_umask</span>=022 <span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Los permisos de los ficheros subidos ser&#225;n 755</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcf7ce54" class="outline-4">
+<h4 id="orgcf7ce54"><span class="section-number-4">1.1.3.</span> <code>chroot</code></h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Para habilitar el <code>chroot</code> lo que tendremos que hacer será descomentar la línea 120 del fichero <code>/etc/vsftpd.conf</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ff6347;">chroot_local_user</span>=YES
+<span style="color: #ff6347;">chroot_list_enable</span>=YES
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">(default follows)</span>
+<span style="color: #ff6347;">chroot_list_file</span>=/etc/vsftpd.chroot_list
+</pre>
+</div>
+
+<p>
+De esta manera conseguiremos enjaular a los usuarios, es decir, impedir el acceso a otras carpetas fuera del directorio de inicio de cada usuario.
+</p>
+
+<ul class="org-ul">
+<li><code>chroot_list_enable=YES</code>: Permitir solo a ciertos usuario el poder navegar por todo el árbol de directorios del servidor</li>
+<li><code>chroot_list_file</code>: Estarán listados los usuarios que pueden navegar hacia arriba por los directorios del servidor.</li>
+</ul>
+
+
+<p>
+A los usuarios que no queramos enjaular, los tendremos que meter en el fichero <code>/etc/vsftpd.chroot_list</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# cat /etc/vsftpd.chroot_list 
+maka
+</pre>
+</div>
+
+<p>
+Para permitir la escritura tendremos que añadir la línea <code>allow_writeable_chroot=YES</code>
+</p>
+
+<p>
+Para activar el modo pasivo para un máximo de 100 conexiones tendremos que añadir lo siguiente:
+</p>
+<ul class="org-ul">
+<li><code>pasv_enable=YES</code></li>
+<li><code>pasv_min_port=40000</code></li>
+<li><code>pasv_max_port=40100</code></li>
+</ul>
+
+
+<p>
+Luego de haber añadido esas tres líneas al fichero <code>/etc/vsftpd.chroot_list</code> podremos reiniciar el servicio mediante la instrucción <code>service vsftpd restart</code> y seguidamente <code>ftp</code> escuchará por el
+puerto 21.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2a5722" class="outline-4">
+<h4 id="orgf2a5722"><span class="section-number-4">1.1.4.</span> Grupos de usuario para <code>ftp</code></h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Los usuarios que se conectarán no tendrán acceso al servidor vía <code>SSH</code> o <i>shell</i> local por lo tanto debemos darles permisos especiales.
+</p>
+
+<p>
+Cuando se instala <code>vsftpd</code> se crea un grupo y usuario llamados <code>ftp</code> por defecto. Lo podremos verificar mediante la instrucción <code>egrep -i ftp /etc/group</code>
+</p>
+
+<p>
+Ahora lo que haremos será habilitar una <i>shell</i> fantasma para que los usuarios <code>ftp</code> no puedan entrar en la consola del servidor.
+</p>
+
+<p>
+Para permitir el acceso del usuario <code>nologin</code> a una <i>shell</i> fantasma lo que tendremos que hacer será modificar el fichero <code>/etc/shells</code> de tal manera que nos quede así:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">/etc/shells: valid login shells</span>
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/tmux
+/usr/sbin/nologin
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb09fdd9" class="outline-4">
+<h4 id="orgb09fdd9"><span class="section-number-4">1.1.5.</span> Crear usuarios para <code>ftp</code></h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Para los usuarios que pertenecerán al grupo ftp, crearemos la carpeta de los usuarios ftp en el servidor, será donde los usuarios ftp tendrán sus carpetas personales, todo en un directorio
+raíz para facilitar la administración.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# mkdir /home/usuariosftp
+root@ubuntu2:~# chmod -R 777 /home/usuariosftp/
+</pre>
+</div>
+
+<p>
+Crear usuarios con el siguiente comando. Usa <i>shell</i> <code>/usr/sbin/nologin</code> para evitar el acceso a la <i>shell</i> para los usuarios ftp.
+</p>
+
+<ul class="org-ul">
+<li><code>useradd -g ftp -d /home/usuariosftp/nombre  -m -s /usr/sbin/nologin -c «Nombre completo» nombre</code></li>
+</ul>
+
+<p>
+Los parámetros que usamos en la línea anterior son:
+</p>
+<ul class="org-ul">
+<li><code>-g ftp</code>: el usuario pertence al grupo <code>ftp</code></li>
+<li><code>-d /home/usuariosftp</code>: el directorio principal del usuario será <code>/home/usuariosftp/prueba</code></li>
+<li><code>-m</code> para que se cree automáticamente el usuario prueba en el directorio dentro de la raíz <code>/home/usuariosftp/</code></li>
+<li><code>-s /usr/sbin/nologin</code>: el usuario no tendrá acceso a la <i>shell</i> del sistema, así no podrá iniciar sesión en el servidor (solo acceso <code>ftp</code>)</li>
+<li><code>-c "Prueba usuarios"</code>: el nombre completo del usuario</li>
+<li><code>prueba</code>: la última palabra será el nombre del usuario</li>
+</ul>
+
+
+<p>
+Ahora lo que tendremos que hacer será crear la contraseña para el usuario <code>prueba</code> mediante el uso de la instrucción <code>passwd</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# passwd prueba
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+</pre>
+</div>
+
+<p>
+Luego de todo el procedimiento de haber creado los usuario lo que podremos hacer será comprobar que de verdad todo está bien configurado tal y como deseamos.
+</p>
+
+<p>
+La primera comprobación la haré desde un cliente <i>Windows 10 LTSC</i> usando el programa Filezilla cliente.
+</p>
+
+
+<div id="org32cee51" class="figure">
+<p><img src="./media/ftp-2.png" alt="ftp-2.png" />
+</p>
+</div>
+
+<p>
+Este usuario no puede iniciar sesión a la consola como dicen las directivas <code>nologin</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# su - prueba
+This account is currently not available.
+</pre>
+</div>
+
+<p>
+Ahora probaré a conectarme mediante <i>Filezilla client</i> pero a otro usuario el cuál no está enjaulado
+</p>
+
+
+<div id="org3228cfd" class="figure">
+<p><img src="./media/ftp-3.png" alt="ftp-3.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe5fda3" class="outline-4">
+<h4 id="orgfe5fda3"><span class="section-number-4">1.1.6.</span> Usuario anónimo</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+Para habilitar el usuario <code>anonymous</code> lo que tendremos que hacer será modificar el fichero <code>/etc/vsftpd.conf</code> descomentando la línea que contenga <code>anonymous_enable=YES</code> de la siguiente manera:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Allow anonymous FTP? (Disabled by default)</span>
+<span style="color: #ff6347;">anonymous_enable</span>=YES
+</pre>
+</div>
+
+<p>
+después de haber descomentado esa línea lo que tendremos que hacer será reiniciar el servicio mediante la instrucción <code>sudo service vsftpd restart</code> y ya podremos conectarnos usando el usuario
+<code>anonymous</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">C:\Users\alumno&gt;ftp 192.168.9.114
+Conectado a 192.168.9.114.
+<span style="color: #edd400; font-weight: bold;">220</span> (vsFTPd 3.0.2)
+200 Always<span style="color: #729fcf; font-weight: bold;"> in</span> UTF8 mode.
+<span style="color: #edd400; font-weight: bold;">Usuario</span> (192.168.9.114:(none)): anonymous
+331 Please specify the password.
+Contrase&#241;a:
+230 Login successful.
+ftp&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc365bcc" class="outline-3">
+<h3 id="orgc365bcc"><span class="section-number-3">1.2.</span> FTP sobre SSL</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Si solemos usar el protocolo <code>FTP</code> y no queremos que nos saquen contraseñas o directamente los ficheros que no pasen sin encriptación entre un servidor y un cliente, para ello debemos
+habilitar la capa segura o SSL.
+</p>
+
+<p>
+<code>FTP</code> en el puerto 21 es un gran riesgo para la seguridad porque con un analizador de paquetes TCP (Ej. <i>wireshark</i>), primero haré un esnifado para comprobar que el usuario y la contraseña
+viaja por la red en texto plano y los ficheros que enviemos también.
+</p>
+
+
+<div id="org4d2dd19" class="figure">
+<p><img src="./media/ftp-4.png" alt="ftp-4.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd97613d" class="outline-4">
+<h4 id="orgd97613d"><span class="section-number-4">1.2.1.</span> Integrar seguridad <code>SSL</code> a <code>FTP</code></h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Habrá que crear un directorio para almacenar los certificados <code>ssl</code>. Usaremos la instrucción <code>sudo mkdir -p /etc/ssl/private</code>
+</p>
+
+<p>
+Luego tendremos que dar permisos a <code>root</code> para ese directorio mediante la instrucción <code>sudo chmod 700 /etc/ssl/private</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# mkdir -p /etc/ssl/private/
+root@ubuntu2:~# chmod -R 700 /etc/ssl/private/
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72fc3c7" class="outline-4">
+<h4 id="org72fc3c7"><span class="section-number-4">1.2.2.</span> Generar un certificado <code>SSL</code> para <code>FTP</code></h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Habrá que estar conectado con el usuario <code>root</code> ya que solo él tiene permisos a el directorio donde se almacena la clave <code>ssl</code>.
+</p>
+
+<p>
+Luego habrá que ejecutar la siguiente instrucción:
+</p>
+<ul class="org-ul">
+<li><code>openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem</code></li>
+</ul>
+
+
+<p>
+Y rellenar los campos de la siguiente manera:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:~# openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
+Generating a 4096 bit RSA private key
+...............................................................++
+..................++
+writing new private key to <span style="color: #ad7fa8; font-style: italic;">'/etc/ssl/private/vsftpd.pem'</span>
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span style="color: #ad7fa8; font-style: italic;">'.'</span>, the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:ES
+State or Province Name (full name) [Some-State]:MADRID
+Locality Name (eg, city) []:ALCALA DE HENARES
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:IES Alonso de Avellaneda
+Organizational Unit Name (eg, section) []:ASIR
+Common Name (e.g. server FQDN or YOUR name) []:asir.iesavellaneda.com
+Email Address []:ismael.macareno@educa.madrid.org
+</pre>
+</div>
+
+<p>
+Por último tendremos que modificar el fichero <code>/etc/vsftpd.conf</code> de tal manera que contenga las siguientes líneas:
+</p>
+<ul class="org-ul">
+<li><code>ssl_enable=YES</code>: habilitar <code>ssl</code></li>
+<li><code>allow_anon_ssl=YES</code>: permite al usuario anónimo usar <code>ssl</code></li>
+<li><code>force_local_data_ssl=YES</code>: forzar a los usuarios ftp a usar <code>ssl</code></li>
+<li><code>force_local_login_ssl=YES</code>: forzar a los usuarios local a usar <code>ssl</code></li>
+<li><code>ssl_tlsv1=YES</code>: habilitar ssl v1</li>
+<li><code>ssl_sslv2=NO</code>: no permitir ssl por seguridad</li>
+<li><code>ssl_sslv3=NO</code>: no permitir ssl por seguridad</li>
+<li><code>rsa_cert_file=/etc/ssl/private/vsftpd.pem</code>: definir la ruta donde esta el certificado</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">This option specifies the location of the RSA certificate to use for SSL</span>
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">encrypted connections.</span>
+<span style="color: #ff6347;">rsa_cert_file</span>=/etc/ssl/private/vsftpd.pem
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">This option specifies the location of the RSA key to use for SSL</span>
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">encrypted connections.</span>
+<span style="color: #ff6347;">rsa_private_key_file</span>=/etc/ssl/private/vsftpd.pem
+
+<span style="color: #888a85; font-size: 150%;"># </span><span style="color: #888a85;">Habilitar escribir a los usuarios enjaulados</span>
+<span style="color: #ff6347;">allow_writeable_chroot</span>=YES
+
+<span style="color: #888a85; font-size: 150%;">#</span><span style="color: #888a85;">Certificado SSL</span>
+<span style="color: #ff6347;">ssl_enable</span>=YES
+<span style="color: #ff6347;">allow_anon_ssl</span>=YES
+<span style="color: #ff6347;">force_local_data_ssl</span>=YES
+<span style="color: #ff6347;">force_local_logins_ssl</span>=YES
+<span style="color: #ff6347;">ssl_tlsv1</span>=YES
+<span style="color: #ff6347;">ssl_sslv2</span>=NO
+<span style="color: #888a85; font-size: 150%;">## </span><span style="color: #888a85;">Compatibilidad</span>
+<span style="color: #ff6347;">ssl_sslv3</span>=NO
+<span style="color: #ff6347;">require_ssl_reuse</span>=NO
+<span style="color: #ff6347;">ssl_ciphers</span>=HIGH
+</pre>
+</div>
+
+<p>
+Guardamos el fichero y reiniciamos el servicio mediante la instrucción <code>sudo service vsftpd restart</code>
+</p>
+
+<p>
+Ahora vamos con las comprobaciones, si intentamos conectarnos desde nuestro Filezilla cliente se rechaza la conexión por los usuarios <code>ftp</code> pero permite los anónimos.
+</p>
+
+<p>
+Para conectarnos desde un usuario autenticado tendremos que habilitar <code>SSL</code> en el <i>software</i> de Fillezila cliente. Para ello en Filezilla iremos a:
+</p>
+<ol class="org-ol">
+<li>Sitio nuevo</li>
+<li>Habilitar TLS</li>
+<li>Rellenaremos los datos para conectarnos</li>
+</ol>
+
+
+<div id="org30154ef" class="figure">
+<p><img src="./media/ftp-5.png" alt="ftp-5.png" />
+</p>
+</div>
+
+
+<div id="org6133c5b" class="figure">
+<p><img src="./media/ftp-6.png" alt="ftp-6.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5eafb2c" class="outline-3">
+<h3 id="org5eafb2c"><span class="section-number-3">1.3.</span> <i>Filezilla Server</i></h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org6d7bebe" class="outline-4">
+<h4 id="org6d7bebe"><span class="section-number-4">1.3.1.</span> Instalación de <i>Filezilla Server</i></h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Necesitaremos una máquina virtual <i>Windows Server 2016 Datacenter</i>.
+</p>
+
+<p>
+Cuando tengamos la máquina virtual <i>Windows</i> lo que haremos será descargar un <code>.exe</code> de la versión <i>Filezilla server 0.9.51</i> y ejecutarlo para instalar.
+</p>
+
+
+<div id="org0d7f4e9" class="figure">
+<p><img src="./media/1.png" alt="1.png" />
+</p>
+<p><span class="figure-number">Figura 1: </span>Macareno, Ismael (2025). Resultado instalación <i>Filezilla server</i> [PNG]. Propia</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc1314cb" class="outline-4">
+<h4 id="orgc1314cb"><span class="section-number-4">1.3.2.</span> Configuración de <i>Filezilla Server</i></h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Comenzaremos con la creación de un nuevo usuario. Para ello tendremos que presionar sobre el icono que muestra una persona.
+</p>
+
+<p>
+Cuando nos aparezca la ventana lo que tendremos que hacer será presionar sobre el botón que pone <b><i>Add</i></b>
+</p>
+
+
+<div id="orgfdfd7bb" class="figure">
+<p><img src="./media/2.png" alt="2.png" />
+</p>
+</div>
+
+<p>
+Al presionar sobre <i>add</i> lo que ocurrirá es que nos aparecerá una ventana solicitando el nombre del nuevo usuario que queremos crear.
+</p>
+
+<p>
+Después en la página de <i>shared folders</i>, tendremos que presionar en <i>add</i> en nuevo para añadir una nueva carpeta. Lo que vamos a hacer es, en disco local (<code>C:\</code>) vamos a crear una nueva
+carpeta que se llame <b>Filezilla</b>, y dentro de la misma, crear una carpeta <b>serei</b> para nuestro nuevo usuario.
+</p>
+
+
+<div id="org6d4c3d2" class="figure">
+<p><img src="./media/3.png" alt="3.png" />
+</p>
+</div>
+
+<p>
+Ahora le tendremos que asignar los permisos que deseemos sobre este directorio a este usuario. En mi caso le voy a dar todos, ya que es su propio directorio. Podríamos dejar menos para un
+directorio compartido o anónimo. Dados los permisos, tenemos que presionar sobre la opción de <b><i>Set as home dir</i></b> para que sea considerado su <code>$HOME</code> y sea donde conecte el usuario por defecto
+</p>
+
+
+<div id="org71ab8e3" class="figure">
+<p><img src="./media/4.png" alt="4.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5b0f28" class="outline-4">
+<h4 id="orgb5b0f28"><span class="section-number-4">1.3.3.</span> Conexión desde un cliente</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Ahora vamos a comprobar si funciona el servidor conectándonos desde un cliente tanto <i>Windows 10 LTSC</i> como GNU/Linux.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgbb9c4a2"></a>Conexión desde un cliente <i>Windows</i><br />
+<div class="outline-text-5" id="text-1-3-3-1">
+<p>
+Para conectarnos desde un <i>Windows 10</i> cliente lo primero que tendremos que hacer será tener instalado el programa <code>Filezilla</code> cliente en nuestra máquina cliente.
+</p>
+
+
+<div id="orgdd43f0e" class="figure">
+<p><img src="./media/5.png" alt="5.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="orgdb3d69f"></a>Conexión desde un cliente GNU/Linux<br />
+<div class="outline-text-5" id="text-1-3-3-2">
+<p>
+Para conectarnos desde un cliente GNU/Linux (en mi caso una máquina Fedora 39), lo que tendremos que hacer será usar la instrucción <code>ftp</code> desde una terminal de la siguiente manera:
+</p>
+<ul class="org-ul">
+<li><code>ftp &lt;DIRECCION IP SERVIDOR&gt;</code></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">maka:~/ $ ftp 192.168.9.102                                                                                [15:34:38]
+Connected to 192.168.9.102 (192.168.9.102)<span style="color: #729fcf;">.</span>
+220-FileZilla Server 0.9.51 beta
+220-written by Tim Kosse (tim.kosse@filezilla-project.org)
+220 Please visit https://filezilla-project.org/
+<span style="color: #edd400; font-weight: bold;">Name</span> (192.168.9.102:maka): apuntes
+331 Password required for apuntes
+Password:
+230 Logged on
+Remote system type is UNIX.
+ftp&gt; 
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+
+
+
+<div id="outline-container-orgfe28778" class="outline-4">
+<h4 id="orgfe28778"><span class="section-number-4">1.3.4.</span> Configuración del servidor</h4>
+<div class="outline-text-4" id="text-1-3-4">
+</div>
+<ol class="org-ol">
+<li><a id="org639c698"></a>Creación de un grupo<br />
+<div class="outline-text-5" id="text-1-3-4-1">
+<p>
+Ahora vamos a probar a crear un grupo para poder gestionar los usuarios de forma colectiva. El procedimiento es prácticamente igual que crear un usuario, pero presionando sobre el icono que
+muestra <b>dos personas</b>.
+</p>
+
+
+<div id="org2b37bcc" class="figure">
+<p><img src="./media/6.png" alt="6.png" />
+</p>
+</div>
+
+<p>
+También crearemos una carpeta compartida para el grupo, en este caso con una peculiaridad. Después de asignar la carpeta, en este caso la he llamado ASIR, como el grupo, vamos a seleccionar
+la opción de <b><i>Rename</i></b>, y le añadiremos un <code>\u:</code>. Además pondremos la casilla de <b><i>autocreate</i></b>. De esta forma le asginamos a cada usuario del grupo que se conecte por FTP una carpeta propia,
+y además, no tendremos que crearla nosotros, sino que se creará automáticamente en la primera conexión de cada usuario.
+</p>
+
+
+<div id="org84259fa" class="figure">
+<p><img src="./media/7.png" alt="7.png" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="orgf64cc50"></a>Limitación de acceso<br />
+<div class="outline-text-5" id="text-1-3-4-2">
+<p>
+En la pestaña de <b><i>edit &gt; Settings</i></b> podemos ver en <b><i>General settings</i></b> dos opciones:
+</p>
+<ul class="org-ul">
+<li><b>IP BINDINGS</b> &#x2013;&gt; Donde elegimos las direcciones IP por la que tenemos disponible el servidor FTP. Si ponemos un * significará que ofrecemos el servicio por todas las direcciones IP disponibles.</li>
+<li><b>IP FILTER</b> &#x2013;&gt; Para filtrar las IPs que pueden acceder al servidor. Se puede filtrar por IP concreta (sin máscara de subred) o por rangos IP (subredes con máscaras de subred)</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org49d84ef" class="outline-4">
+<h4 id="org49d84ef"><span class="section-number-4">1.3.5.</span> Conexión segura por SSL</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<p>
+Para hacer segura la conexión del servidor, de nuevo en <b><i>edit &gt; settings</i></b>, ahora en el apartado de <b><i>FTP over TLS settings</i></b>.
+</p>
+
+<p>
+En este caso presionaremos sobre <b><i>Generate new certificate</i></b> y rellenaremos los campos. En el <i>common name</i>, según el cliente FTP que usemos, será necesario poner el nombre que usaremos
+en el momento de establecer la conexión.
+</p>
+
+
+<div id="org7b76bd5" class="figure">
+<p><img src="./media/8.png" alt="8.png" />
+</p>
+</div>
+
+<p>
+Al usar esta creación de certificado se crea solo un fichero <i>certificate.crt</i> que contiene tanto el certificado como la clave privada.
+</p>
+
+
+<div id="orgf621491" class="figure">
+<p><img src="./media/9.png" alt="9.png" />
+</p>
+</div>
+
+<p>
+Aquí podemos verlo. Será necesario sacar las dos partes a dos ficheros separados, uno <i>private.key</i> con la clave privada y otro <i>certificatePublica.crt</i> con el certificado.
+</p>
+
+
+<div id="org8cfacf0" class="figure">
+<p><img src="./media/10.png" alt="10.png" />
+</p>
+</div>
+
+<p>
+Y ahora tendremos que indicar en la configuración la ruta de los ficheros.
+</p>
+
+
+<div id="org90a2b28" class="figure">
+<p><img src="./media/11.png" alt="11.png" />
+</p>
+</div>
+
+<p>
+Cuando nos conectemos desde un cliente mediante <code>FTPS</code>, como el certificado no está firmado por una entidad verificadora, sino que lo hemos hecho a nivel local de una forma casera, será
+necesario cancelar la verificación del certificado. Para ello, una vez hayamos establecido la conexión habrá que escribir lo siguiente:
+</p>
+<ul class="org-ul">
+<li><code>set ssl:verify-content no</code></li>
+</ul>
+
+<p>
+En caso de querer hacer está configuración de manera permanente lo que tendremos que hacer será modificar el fichero <code>/etc/lftp.conf</code> y poner en el final las siguientes líneas
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #729fcf;">set</span> dns:order <span style="color: #ad7fa8; font-style: italic;">"inet6 inet"</span>
+<span style="color: #729fcf;">set</span> ssl:verify-certificate no
+</pre>
+</div>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgb655b8c"></a>Comprobación de conexión mediante <code>FTPD</code><br />
+<div class="outline-text-5" id="text-1-3-5-1">
+<p>
+Tendremos que realizar una conexión mediante <code>lftp</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka:~/ $ lftp -u apuntes ftps://192.168.9.102                                                             [16:38:22]
+Password: 
+lftp apuntes@192.168.9.102:~&gt;
+</pre>
+</div>
+</div>
+</li>
+
+
+<li><a id="orgb35bf5f"></a>Comprobación de firma del certificado en una máquina GNU/Linux<br />
+<div class="outline-text-5" id="text-1-3-5-2">
+<ul class="org-ul">
+<li><code>openssl x509 -in certificatePublica.crt -noout -fingerprint -[sha256|sha1]</code></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2fd369e" class="outline-2">
+<h2 id="org2fd369e"><span class="section-number-2">2.</span> SSH</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org4ea80dc" class="outline-3">
+<h3 id="org4ea80dc"><span class="section-number-3">2.1.</span> <code>Telnet</code></h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>El paquete de <code>telnet</code> es <b><code>telnetd</code></b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga0a6b46" class="outline-3">
+<h3 id="orga0a6b46"><span class="section-number-3">2.2.</span> Ficheros relevantes</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><code>/etc/ssh/ssh_config</code>: fichero de configuración de parámetros del cliente</li>
+<li><code>/etc/ssh/sshd_config</code>: fichero de configuración de parámetros del servidor</li>
+<li><code>$HOME/.ssh/authorized_keys</code>: fichero que contiene las claves públicas de los hosts autorizados a conectarse por autenticación de clave pública</li>
+<li><code>$HOME/.ssh/known_hosts</code>: guarda las conexiones que se han realizado a servidores <code>ssh</code> una vez aceptadas las <i>fingerprints</i></li>
+<li><code>$HOME/.ssh/config</code>: nos permite configurar ciertos parámetros de los que se definene en el fichero <code>/etc/ssh/ssh_config</code> pero de manera individual para el usuarios que lo usa y para la
+conexión concreta especificada</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org715544e" class="outline-3">
+<h3 id="org715544e"><span class="section-number-3">2.3.</span> Instalación del servidor <code>openssh</code></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Para instalar un servidor <code>ssh</code> lo que tendremos que hacer será hacer uso de la instrucción:
+</p>
+<ul class="org-ul">
+<li><code>sudo apt-get install openssh-server</code></li>
+</ul>
+
+
+<p>
+En caso de querer instalar un cliente <code>ssh</code> tendremos que hacer uso de la instrucción:
+</p>
+<ul class="org-ul">
+<li><code>sudo apt-get install openssh-client</code></li>
+</ul>
+
+
+<p>
+Luego podremos establecer una conexión al servidor desde un cliente ejecutando la instrucción
+</p>
+<ul class="org-ul">
+<li><code>ssh nombreUsuario@DireccionIPMaquin</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu3:~$ ssh maka@172.20.10.5
+The authenticity of host <span style="color: #ad7fa8; font-style: italic;">'172.20.10.5 (172.20.10.5)'</span> can<span style="color: #ad7fa8; font-style: italic;">'t be established.</span>
+<span style="color: #ad7fa8; font-style: italic;">ECDSA key fingerprint is e6:cf:d5:13:d4:cf:7e:b7:9a:01:6c:86:c6:23:6f:75.</span>
+<span style="color: #ad7fa8; font-style: italic;">Are you sure you want to continue connecting (yes/no)? yes</span>
+<span style="color: #ad7fa8; font-style: italic;">Warning: Permanently added '</span>172.20.10.5<span style="color: #ad7fa8; font-style: italic;">' (ECDSA) to the list of known hosts.</span>
+<span style="color: #ad7fa8; font-style: italic;">maka@172.20.10.5'</span>s password: 
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described<span style="color: #729fcf; font-weight: bold;"> in</span> the
+individual files<span style="color: #729fcf; font-weight: bold;"> in</span> /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+maka@ubuntu2:~$
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0e97dd9" class="outline-3">
+<h3 id="org0e97dd9"><span class="section-number-3">2.4.</span> Ver la dirección en <code>known_hosts</code> en vez de el <code>hash</code></h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Ahora lo que haremos será hacer configuraciones para que en vez de ver un <code>hash</code> cuando miremos el fichero <code>$HOME/.ssh/known_hosts</code> veámos la dirección IP que se ha conectado a nuestro servidor.
+</p>
+
+<p>
+Primero antes de hacer nada lo que haremos será mirar en la máquina servidor el fichero <code>$HOME/.ssh/known_hosts</code> para ver si tenemos algún registro
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu2:~/.ssh$ cat known_hosts 
+|1|VJm5fgA1jJBxCHzMjP+<span style="color: #ff6347;">651QexPY</span>=|<span style="color: #ff6347;">SsSzyK9hTHUzxSpDMeWhlGgznuk</span>= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNfC3VlFMn7jXU61ITQBxbRBRTv8E5Z/hNokk5W12Hgac
+<span style="color: #ff6347;">7CB2ErfSGex08oqOJQtLUXfLYjruHe8h8XBy7UKVJg</span>=
+</pre>
+</div>
+
+<p>
+Lo que se puede apreciar arriba es la entrada que tenemos en el fichero <code>$HOME/.ssh/known_hosts</code> de nuestra máquina servidor después de haber realizado un <code>ssh</code> desde nuestra máquina cliente.
+</p>
+
+<p>
+Para ver la dirección IP que se ha conectado a nosotros en vez de ese <code>hash</code> lo que tendremos que hacer será, en nuestra máquina servidor, modificar el fichero <code>/etc/ssh/ssh_config</code> en la
+línea que contenga <code>HashKnownHosts</code> de tal manera que su valor sea <code>no</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #888a85; font-size: 150%;">#   </span><span style="color: #888a85;">RekeyLimit 1G 1h</span>
+    SendEnv LANG LC_*
+    HashKnownHosts no
+</pre>
+</div>
+
+<p>
+NO FUNCIONA
+</p>
+</div>
+</div>
+<div id="outline-container-orgb227eab" class="outline-3">
+<h3 id="orgb227eab"><span class="section-number-3">2.5.</span> Eliminar error intento ataque Ddos</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Muchas veces vamos a tener que eliminar entradas de nuestro fichero <code>known_hosts</code> para que al cliente le vuelva a aparecer el mensaje del <i>fingerprint</i>, para hacer esto tendremos que usar
+la instrucción:
+</p>
+<ul class="org-ul">
+<li><code>ssh-keygen -f $HOME/.ssh/known_hosts -R DIRECCIONIPCLIENTE</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org95c5a6f" class="outline-3">
+<h3 id="org95c5a6f"><span class="section-number-3">2.6.</span> Conexión por clave pública</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Lo primero que tendremos que hacer será generar un par de claves pública-privada en el cliente.
+</p>
+
+<p>
+Para generar estás claves tendremos que hacer uso de la instrucción <code>ssh-keygen</code> de la siguiente manera:
+</p>
+<ul class="org-ul">
+<li><code>ssh-keygen -t rsa</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file<span style="color: #729fcf; font-weight: bold;"> in</span> which to save the key (/home/maka/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved<span style="color: #729fcf; font-weight: bold;"> in</span> /home/maka/.ssh/id_rsa.
+Your public key has been saved<span style="color: #729fcf; font-weight: bold;"> in</span> /home/maka/.ssh/id_rsa.pub.
+The key fingerprint is:
+30:c2:99:66:79:3b:1a:93:d0:aa:13:67:65:7d:47:20 maka@ubuntu201
+The key<span style="color: #ad7fa8; font-style: italic;">'s randomart image is:</span>
+<span style="color: #ad7fa8; font-style: italic;">+--[ RSA 2048]----+</span>
+<span style="color: #ad7fa8; font-style: italic;">|      E ...      |</span>
+<span style="color: #ad7fa8; font-style: italic;">|   o = . .       |</span>
+<span style="color: #ad7fa8; font-style: italic;">|  . % = . .      |</span>
+<span style="color: #ad7fa8; font-style: italic;">|   B + = .       |</span>
+<span style="color: #ad7fa8; font-style: italic;">|. + + o S        |</span>
+<span style="color: #ad7fa8; font-style: italic;">| =   + .         |</span>
+<span style="color: #ad7fa8; font-style: italic;">|o   .            |</span>
+<span style="color: #ad7fa8; font-style: italic;">| .               |</span>
+<span style="color: #ad7fa8; font-style: italic;">|                 |</span>
+<span style="color: #ad7fa8; font-style: italic;">+-----------------+</span>
+</pre>
+</div>
+
+<p>
+Las claves se almacenarán en <code>$HOME/.ssh/</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ls -la .ssh/
+total 20
+drwx------  2 maka maka 4096 feb 18 18:35 .
+drwxr-xr-x 19 maka maka 4096 feb 18 18:32 ..
+-rw-------  1 maka maka 1679 feb 18 18:35 id_rsa
+-rw-r--r--  1 maka maka  396 feb 18 18:35 id_rsa.pub
+-rw-r--r--  1 maka maka  444 dic  9 09:39 known_hosts
+</pre>
+</div>
+
+<p>
+Luego de haber creado las claves lo que tendremos que hacer será enviar la <b>clave pública</b> al servidor, en mi caso lo haré mediante la instrucción <code>scp</code>
+</p>
+<ul class="org-ul">
+<li><code>maka@ubuntu201:~$ scp .ssh/id_rsa.pub ana@172.20.10.5:/home/ana/</code></li>
+</ul>
+
+<p>
+Una vez tengamos la clave pública del cliente en el servidor lo que tendremos que hacer será añadir la clave al fichero <code>$HOME/.ssh/authorized_keys</code>
+</p>
+
+
+\begin{alertblock}{AVISO}
+Puede que el fichero authorized keys no exista. En ese caso lo que haremos sera renombrar la clave pública con el nombre de authorized key
+\end{alertblock}
+
+<div class="org-src-container">
+<pre class="src src-bash">root@ubuntu2:/etc/ssh# cd /home/ana/.ssh/
+root@ubuntu2:/home/ana/.ssh# ls -la
+total 12
+drwx------ 2 ana ana 4096 feb 18 18:55 .
+drwxr-xr-x 4 ana ana 4096 feb 18 18:41 ..
+-rw-r--r-- 1 ana ana  396 feb 18 18:38 authorized_keys
+-rw-r--r-- 1 ana ana    0 feb 18 18:26 known_hosts
+</pre>
+</div>
+
+<p>
+Ahora tendríamos que poder acceder desde la máquina cliente a la máquina servidor sin tener que escribir ningún tipo de <i>password</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh ana@172.20.10.5
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+New release <span style="color: #ad7fa8; font-style: italic;">'16.04.7 LTS'</span> available.
+Run <span style="color: #ad7fa8; font-style: italic;">'do-release-upgrade'</span> to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Tue Feb 18 18:42:54 2025 from 172.20.10.2
+ana@ubuntu2:~$ 
+</pre>
+</div>
+
+<p>
+Con la opción <code>-v</code> de la instrucción <code>ssh</code> podríamos ver el proceso en el cuál se leen las claves. La opción que nos daría la mejor información de lo que está pasando sería
+</p>
+<ul class="org-ul">
+<li><code>debug1: Offering RSA public key: /home/maka/.ssh/id_rsa</code></li>
+</ul>
+
+<p>
+En caso de tener más de una clave en nuestro cliente tendríamos que usar la opción <code>-i</code> de la instrucción <code>ssh</code> de la siguiente manera:
+</p>
+<ul class="org-ul">
+<li><code>ssh -i &lt;&lt;NOMBRE-CLAVE-PRIVADA&gt;&gt; usuario@destino</code></li>
+</ul>
+</div>
+<div id="outline-container-org3960fde" class="outline-4">
+<h4 id="org3960fde"><span class="section-number-4">2.6.1.</span> Configuración del servidor</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+Podemos habilitar o deshabilitar la conexión mediante claves público-privada con la opción <code>PubKeyAuthentication</code> en el fichero <code>/etc/ssh/sshd_config</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org577730d" class="outline-3">
+<h3 id="org577730d"><span class="section-number-3">2.7.</span> Directorio <code>$HOME/.ssh/</code></h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Es un directorio el cuál se crea solo en la <code>$HOME</code> del usuario con el que estés conectando. Para añadir ciertos parámetros de configuración, debemos crear un fichero llamado <code>config</code> y ahí
+podemos poner los parámetros que queramos.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">Host 172.20.10.5-rsa
+    Hostname 172.20.10.5
+    HostKeyAlgorithms ssh-rsa
+    ForwardX11 yes
+    CheckHostIp no
+    HostKeyAlias 172.20.10.5-rsa
+    Port 2222
+    User ana
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>Hostname 172.20.10.5</code>: Dirección IP a la que se conecta</li>
+<li><code>HostKeyAlgorithms ssh-rsa</code>: El cliente solo usará el algoritmo <code>ssh-rsa</code> para autenticarse con el servidor</li>
+<li><code>ForwardX11 yes</code>: Habilita el reenvío de las X11, permitiendo ejecutar aplicaciones gráficas en el servidor viéndolas en el cliente</li>
+<li><code>CheckHostIp no</code>: Evita que <code>ssh</code> verifique si la IP del servidor ha cambiado</li>
+<li><code>HostKeyAlias 172.20.10.5-rsa</code>: usa 172.20.10.5-rsa como alías para la clave del host en <code>~/.ssh/known_hosts</code></li>
+<li><code>Port 2222</code>: En lugar del puerto estándar (22), usará el puerto 2222</li>
+<li><code>User ana</code>: Especifica el usuario con el hará <i>login</i> en el servidor</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf4ed08" class="outline-3">
+<h3 id="orgcf4ed08"><span class="section-number-3">2.8.</span> Algoritmo de cifrado</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+El algoritmo por defecto es <code>ecdsa-sha2-nistp256</code>, pero lo podemos modificar estableciendo la conexión de la siguiente manera:
+</p>
+<ul class="org-ul">
+<li><code>ssh -o HostKeyAlgorithms=ssh-rsa ana@172.20.10.5</code></li>
+</ul>
+
+<p>
+Si no eliminamos el contenido del fichero <code>$HOME/,ssh/known_hosts</code> nos aparecerá el siguiente error
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)<span style="color: #6ac214;">!</span>
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+ec:ed:1e:48:f1:8d:22:4e:e2:dc:58:e1:c6:b0:f7:d0.
+Please contact your system administrator.
+Add correct host key<span style="color: #729fcf; font-weight: bold;"> in</span> /home/maka/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key<span style="color: #729fcf; font-weight: bold;"> in</span> /home/maka/.ssh/known_hosts:3
+  remove with: ssh-keygen -f <span style="color: #ad7fa8; font-style: italic;">"/home/maka/.ssh/known_hosts"</span> -R 172.20.10.5
+RSA host key for 172.20.10.5 has changed and you have requested strict checking.
+Host key verification failed.
+</pre>
+</div>
+
+<p>
+Lo único que tendremos que hacer será ejecutar la instrucción <code>echo "" &gt; known_hosts</code> para eliminar el contenido del fichero y ya nos podremos conectar y encima sin contraseña porque tenemos
+la clave pública en el servidor
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~/.ssh$ echo <span style="color: #ad7fa8; font-style: italic;">""</span> &gt; known_hosts 
+maka@ubuntu201:~/.ssh$ ssh -o <span style="color: #ff6347;">HostKeyAlgorithms</span>=ssh-rsa ana@172.20.10.5
+The authenticity of host <span style="color: #ad7fa8; font-style: italic;">'172.20.10.5 (172.20.10.5)'</span> can<span style="color: #ad7fa8; font-style: italic;">'t be established.</span>
+<span style="color: #ad7fa8; font-style: italic;">RSA key fingerprint is ec:ed:1e:48:f1:8d:22:4e:e2:dc:58:e1:c6:b0:f7:d0.</span>
+<span style="color: #ad7fa8; font-style: italic;">Are you sure you want to continue connecting (yes/no)? yes</span>
+<span style="color: #ad7fa8; font-style: italic;">Warning: Permanently added '</span>172.20.10.5<span style="color: #ad7fa8; font-style: italic;">' (RSA) to the list of known hosts.</span>
+<span style="color: #ad7fa8; font-style: italic;">Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)</span>
+
+<span style="color: #ad7fa8; font-style: italic;"> * Documentation:  https://help.ubuntu.com/</span>
+
+<span style="color: #ad7fa8; font-style: italic;">New release '</span>16.04.7 LTS<span style="color: #ad7fa8; font-style: italic;">' available.</span>
+<span style="color: #ad7fa8; font-style: italic;">Run '</span>do-release-upgrade<span style="color: #ad7fa8; font-style: italic;">' to upgrade to it.</span>
+
+<span style="color: #ad7fa8; font-style: italic;">Your Hardware Enablement Stack (HWE) is supported until April 2019.</span>
+<span style="color: #ad7fa8; font-style: italic;">Last login: Tue Feb 18 18:57:13 2025 from 172.20.10.2</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf12e5c1" class="outline-3">
+<h3 id="orgf12e5c1"><span class="section-number-3">2.9.</span> <code>SSH-Agent</code></h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+Es un programa que gestiona las claves privadas <code>ssh</code> en segundo plano, evitando que tengas que ingresar la contraseña de tu clave privada cada vez que te conectas a un servidor, incluso evita
+tener que ingresar la clave de paso.
+</p>
+
+<p>
+Vamos a generar una clave que tenga frase de paso para comprobar que esto es cierto.
+</p>
+
+<p>
+Para generar la clave de paso tendremos que hacer uso de la instrucción <code>ssh-keygen -t rsa</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file<span style="color: #729fcf; font-weight: bold;"> in</span> which to save the key (/home/maka/.ssh/id_rsa): id_rsa_frase
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved<span style="color: #729fcf; font-weight: bold;"> in</span> id_rsa_frase.
+Your public key has been saved<span style="color: #729fcf; font-weight: bold;"> in</span> id_rsa_frase.pub.
+The key fingerprint is:
+6c:33:c5:1d:58:28:32:17:3a:c1:30:8c:48:62:dc:07 maka@ubuntu201
+The key<span style="color: #ad7fa8; font-style: italic;">'s randomart image is:</span>
+<span style="color: #ad7fa8; font-style: italic;">+--[ RSA 2048]----+</span>
+<span style="color: #ad7fa8; font-style: italic;">|++.E+o. .. +o    |</span>
+<span style="color: #ad7fa8; font-style: italic;">|+....o+oo.o. .   |</span>
+<span style="color: #ad7fa8; font-style: italic;">|    . o+ .o .    |</span>
+<span style="color: #ad7fa8; font-style: italic;">|       o .       |</span>
+<span style="color: #ad7fa8; font-style: italic;">|        S        |</span>
+<span style="color: #ad7fa8; font-style: italic;">|       . o       |</span>
+<span style="color: #ad7fa8; font-style: italic;">|                 |</span>
+<span style="color: #ad7fa8; font-style: italic;">|                 |</span>
+<span style="color: #ad7fa8; font-style: italic;">|                 |</span>
+<span style="color: #ad7fa8; font-style: italic;">+-----------------+</span>
+</pre>
+</div>
+
+<p>
+Ahora tendremos que ejecutar la instrucción <code>ssh-agent</code> y añadiremos la nueva frase de paso
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh-agent 
+<span style="color: #ff6347;">SSH_AUTH_SOCK</span>=/tmp/ssh-Fh3MJaBVg9pL/agent.4470; <span style="color: #729fcf;">export</span> SSH_AUTH_SOCK;
+<span style="color: #ff6347;">SSH_AGENT_PID</span>=4471; <span style="color: #729fcf;">export</span> SSH_AGENT_PID;
+<span style="color: #729fcf;">echo</span> Agent pid 4471;
+maka@ubuntu201:~$ ssh-add id_rsa_frase
+Enter passphrase for id_rsa_frase: 
+Identity added: id_rsa_frase (id_rsa_frase)
+</pre>
+</div>
+
+<p>
+Con la instrucción <code>ssh-add -l</code> listamos las frases de paso que tengamos
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh-add -l
+2048 6c:33:c5:1d:58:28:32:17:3a:c1:30:8c:48:62:dc:07 id_rsa_frase (RSA)
+2048 30:c2:99:66:79:3b:1a:93:d0:aa:13:67:65:7d:47:20 maka@ubuntu201 (RSA)
+</pre>
+</div>
+
+<p>
+Ahora lo que tendremos que hacer será enviar la clave pública al servidor, en mi caso seguiré usando la instrucción <code>scp</code>
+</p>
+<ul class="org-ul">
+<li><code>maka@ubuntu201:~$ scp id_rsa_frase.pub ana@172.20.10.5:/home/ana</code></li>
+</ul>
+
+<p>
+Una vez tengamos la clave pública nueva en la máquina servidor lo que haremos será ejecutar una instrucción la cuál lee el contenido del fichero de la clave pública y lo añade al fichero de
+<code>$HOME/.ssh/authorized_keys</code>
+</p>
+<ul class="org-ul">
+<li><code>cat id_rsa_frase.pub &gt;&gt; .ssh/authorized_keys</code></li>
+</ul>
+
+<p>
+Y ya nos podríamos conectar usando la opcíon <code>i</code> con esa frase de paso
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">maka@ubuntu201:~$ ssh -i id_rsa_frase ana@172.20.10.5
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+New release <span style="color: #ad7fa8; font-style: italic;">'16.04.7 LTS'</span> available.
+Run <span style="color: #ad7fa8; font-style: italic;">'do-release-upgrade'</span> to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Tue Feb 18 19:19:15 2025 from 172.20.10.2
+ana@ubuntu2:~$ 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0525dd" class="outline-3">
+<h3 id="orga0525dd"><span class="section-number-3">2.10.</span> Windows: <code>ssh</code>, claves y <code>ssh-agent</code></h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+Para instalar el servidor OpenSSH en una máquina Windows 10 la ruta a seguir es:
+</p>
+<ol class="org-ol">
+<li>Ajustes</li>
+<li>Aplicaciones</li>
+<li>Aplicaciones y características</li>
+<li>Administrar funciones opcionales</li>
+<li>Agregar una característica</li>
+</ol>
+
+<p>
+El <code>ssh-agent</code> se habilita en <b>Servicios</b> &gt; <i>OpenSSH Authentication Agent</i>. Lo pondremos en automático
+</p>
+
+
+<div id="orga69f908" class="figure">
+<p><img src="./media/ssh-agent-win.png" alt="ssh-agent-win.png" />
+</p>
+</div>
+
+<p>
+Para generar un par de claves público-privada en Windows se hará con la misma instrucción usada en GNU/Linux desde el <code>CMD</code>
+</p>
+
+
+<div id="org31e71a5" class="figure">
+<p><img src="./media/ssh-keygen-win.png" alt="ssh-keygen-win.png" />
+</p>
+</div>
+
+<p>
+Luego le daremos la clave pública al servidor mediante la instrucción <code>scp</code>
+</p>
+
+<p>
+Luego en el servidor lo que haremos será añadir el contenido de la clave pública al fichero <code>/.ssh/authorized_key</code>
+</p>
+
+<p>
+Ya nos podremos conectar sin ningún tipo de problema.
+</p>
+</div>
+
+<div id="outline-container-org42764ed" class="outline-4">
+<h4 id="org42764ed"><span class="section-number-4">2.10.1.</span> Putty</h4>
+<div class="outline-text-4" id="text-2-10-1">
+<p>
+Lo primero que haremos será instalar el <i>software</i> putty
+</p>
+
+<p>
+Una vez instalado el <i>software</i> lo que haremos será abrir el programa <b>PuttyGen</b> para crear un par de claves
+</p>
+
+
+<div id="orgf69d4d0" class="figure">
+<p><img src="./media/win-puttygen.png" alt="win-puttygen.png" />
+</p>
+</div>
+
+<p>
+Luego de tener algo parecido a lo que se puede ver en la imagen de arriba lo que haremos será:
+</p>
+<ol class="org-ol">
+<li>Añadir la clave de paso</li>
+<li>Copiar el texto que aparece en rojo porque será el contenido de la clave pública</li>
+<li>Presionar los botónes de <i>save public key &amp; save private key</i></li>
+</ol>
+
+<p>
+Después de esto ya podremos realizar el procedimiento ya conocido de:
+</p>
+<ol class="org-ol">
+<li>Enviar la clave pública al servidor mediante <code>scp</code></li>
+<li>Añadir en el servidor la clave pública al fichero <code>.ssh/authorized_keys</code></li>
+</ol>
+
+<p>
+En este caso probaré a conectarme a la máquina servidor desde el <i>software</i> Putty y no desde el <code>cmd</code>.
+</p>
+
+
+<div id="org3003aef" class="figure">
+<p><img src="./media/putty-connect.png" alt="putty-connect.png" />
+</p>
+</div>
+
+
+<div id="org93dc5d1" class="figure">
+<p><img src="./media/putty-connect-2.png" alt="putty-connect-2.png" />
+</p>
+</div>
+
+
+<div id="org526c125" class="figure">
+<p><img src="./media/putty-connect-3.png" alt="putty-connect-3.png" />
+</p>
+</div>
+
+<p>
+Se puede apreciar en la última imagen de arriba que aún nos está pidiendo la frase de paso. Para evitar esto lo que tendremos que hacer será abrir el programa <b>Pageant</b> y añadir el agente.
+</p>
+
+<p>
+Cuando presionemos sobre <b>Pageant</b> en el buscador de <i>windows</i> no ocurrirá nada especial, pero "aparecerá" lo siguiente
+</p>
+
+
+<div id="orgd59a8b9" class="figure">
+<p><img src="./media/pageant-1.png" alt="pageant-1.png" />
+</p>
+</div>
+
+<p>
+Lo que haremos será hacer clic derecho sobre ese icono &gt; añadir clave y añadiremos nuestra clave privada.
+</p>
+
+<p>
+Luego en la configuración de Putty lo que haremos será en conexión &gt; ssh &gt; auth, marcar la casilla de autenticarse usando pageant
+</p>
+
+
+<div id="org631f892" class="figure">
+<p><img src="./media/pageant-2.png" alt="pageant-2.png" />
+</p>
+</div>
+
+
+<div id="org7288867" class="figure">
+<p><img src="./media/pageant-3.png" alt="pageant-3.png" />
+</p>
+</div>
+
+<p>
+Como se puede apreciar ya no se nos pide la frase de paso para acceder al usuario ana.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge3059c2" class="outline-4">
+<h4 id="orge3059c2"><span class="section-number-4">2.10.2.</span> MobaXterm</h4>
+<div class="outline-text-4" id="text-2-10-2">
+<p>
+Para generar un par de claves público-privadas en mobaxterm lo que hay que hacer es ir a <i>tools</i> &gt; MobaKeyGen
+</p>
+
+<p>
+La interfaz es casi igual a la de putty por lo que habrá que hacer clic en <b>generar claves</b> y mover el ratón.
+</p>
+
+<p>
+En este caso no vamos a crear ningún par de claver pero lo que si que vamos a hacer es realizar una conexión usando este programa.
+</p>
+
+
+<div id="org06b77b9" class="figure">
+<p><img src="./media/mobaxterm.png" alt="mobaxterm.png" />
+</p>
+</div>
+
+
+<div id="org74219a4" class="figure">
+<p><img src="./media/mobaxterm-2.png" alt="mobaxterm-2.png" />
+</p>
+</div>
+
+\begin{alertblock}{AVISO}
+Hay que tener iniciado el Pageant para que funcione
+\end{alertblock}
+
+<p>
+Con MobaXterm también podemos conectarnos de una manera gráfica vamos al apartado de <b><i>Session</i> &gt; SFTP</b>
+</p>
+
+
+<div id="org81d6793" class="figure">
+<p><img src="./media/mobaxterm-3.png" alt="mobaxterm-3.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org36fd4a5" class="outline-3">
+<h3 id="org36fd4a5"><span class="section-number-3">2.11.</span> Cluster <code>ssh</code></h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+Para instalar <code>cssh</code> habrá que ejecutar la instrucción:
+</p>
+<ul class="org-ul">
+<li><code>sudo apt-get install clusterssh</code></li>
+</ul>
+
+<p>
+Ahora ejecutamos el comando <code>cssh</code> para crear el directorio y sus ficheros de configuración.
+</p>
+
+
+<div id="org8aaf4e7" class="figure">
+<p><img src="./media/cssh-1.png" alt="cssh-1.png" />
+</p>
+</div>
+
+<p>
+ahora básicamente podremos conectarnos a varias máquinas a la vez, en mi caso me conectaré a otras dos máquinas Ubuntu
+</p>
+
+
+<div id="org0fc99d1" class="figure">
+<p><img src="./media/cssh-2.png" alt="cssh-2.png" />
+</p>
+</div>
+
+<p>
+Como se puede ver en la imagen de arriba se me han abierto 3 ventanas, 2 más grandes y una pequeña, las dos grandes corresponden a los equipos que estamos conectados y la pequeña es para que
+escribamos los comandos que se escribiran al mismo tiempo en las dos ventanas grandes y cuando presionemos la tecla <code>ENTER</code> se ejecutará el comando en las dos ventanas grandes.
+</p>
+
+<p>
+Si las máquinas tuvieran el mismo usuario podríamos usar el siguiente comando:
+</p>
+<ul class="org-ul">
+<li><code>cssh -l maka &lt;ip&gt; &lt;ip&gt; &lt;ip&gt;</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org33bc457" class="outline-4">
+<h4 id="org33bc457"><span class="section-number-4">2.11.1.</span> <span class="todo TODO">TODO</span> Clusters</h4>
+<div class="outline-text-4" id="text-2-11-1">
+<p>
+Para no tener que estar escribiendo cada vez que queramos conectarnos todas la IPs, podemos crear un grupo de clústers para conectarnos directamente a todos los que estén en ese grupo.
+</p>
+
+<p>
+Para ello creamos el fichero en <code>$HOME/maka/.clusterss/clusters</code>
+</p>
+
+<p>
+NO SE SABE
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0106353" class="outline-4">
+<h4 id="org0106353"><span class="section-number-4">2.11.2.</span> <span class="todo TODO">TODO</span> <i>Tags</i></h4>
+<div class="outline-text-4" id="text-2-11-2">
+<p>
+En justo lo inverso a cluster.
+</p>
+
+<p>
+Crearemos el fichero en <code>$HOME/.clusterssh/tags</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4e3327d" class="outline-3">
+<h3 id="org4e3327d"><span class="section-number-3">2.12.</span> Entorno gráfico</h3>
+<div class="outline-text-3" id="text-2-12">
+</div>
+<div id="outline-container-orgf663702" class="outline-4">
+<h4 id="orgf663702"><span class="section-number-4">2.12.1.</span> GNU/Linux</h4>
+<div class="outline-text-4" id="text-2-12-1">
+<p>
+Para poder usar <code>ssh</code> con entorno gráfico, tenemos que habilitarlo en el servidor.
+</p>
+
+<p>
+Tendremos que modificar el fichero <code>/etc/ssh/sshd_config</code> en la línea que contenga <code>X11Forwarding yes</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+<span style="color: #888a85; font-size: 150%;">#</span><span style="color: #888a85;">UseLogin no</span>
+</pre>
+</div>
+
+<p>
+Ahora para conectarnos tendremos que usar el parámetro <code>-X</code> o también lo podemos hacer permanente modificando el fichero <code>/etc/ssh/ssh_config</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">Host *
+<span style="color: #888a85; font-size: 150%;">#   </span><span style="color: #888a85;">ForwardAgent no</span>
+    ForwardX11 yes
+</pre>
+</div>
+
+<p>
+Con esto ya podremos conectarnos y ejecutar comandos de forma gráfica
+<img src="./media/x11-1.png" alt="x11-1.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org6f095e0" class="outline-4">
+<h4 id="org6f095e0"><span class="section-number-4">2.12.2.</span> <i>Microsoft Windows</i></h4>
+<div class="outline-text-4" id="text-2-12-2">
+<p>
+En este caso usaremos el programa MobaXterm.
+</p>
+
+
+<div id="org5c70517" class="figure">
+<p><img src="./media/x11-2.png" alt="x11-2.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5bfa1d4" class="outline-3">
+<h3 id="org5bfa1d4"><span class="section-number-3">2.13.</span> Tunelización</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+La instrucción a usar sería la siguiente:
+</p>
+<ul class="org-ul">
+<li><code>ssh -g -L [interfaz]:[puertoLocal]:[direcciónDelServicio]:[puertoServicio] [conexionSshPuente]</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Ismael Macareno Chouikh</p>
+<p class="date">Created: 2025-02-19 Wed 01:21</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} This option specifies the location of the RSA certificate to use for SSL}
+\PYG{c+c1}{\PYGZsh{} encrypted connections.}
+\PYG{n+nv}{rsa\PYGZus{}cert\PYGZus{}file}\PYG{o}{=}/etc/ssl/private/vsftpd.pem
+\PYG{c+c1}{\PYGZsh{} This option specifies the location of the RSA key to use for SSL}
+\PYG{c+c1}{\PYGZsh{} encrypted connections.}
+\PYG{n+nv}{rsa\PYGZus{}private\PYGZus{}key\PYGZus{}file}\PYG{o}{=}/etc/ssl/private/vsftpd.pem
+
+\PYG{c+c1}{\PYGZsh{} Habilitar escribir a los usuarios enjaulados}
+\PYG{n+nv}{allow\PYGZus{}writeable\PYGZus{}chroot}\PYG{o}{=}YES
+
+\PYG{c+c1}{\PYGZsh{}Certificado SSL}
+\PYG{n+nv}{ssl\PYGZus{}enable}\PYG{o}{=}YES
+\PYG{n+nv}{allow\PYGZus{}anon\PYGZus{}ssl}\PYG{o}{=}YES
+\PYG{n+nv}{force\PYGZus{}local\PYGZus{}data\PYGZus{}ssl}\PYG{o}{=}YES
+\PYG{n+nv}{force\PYGZus{}local\PYGZus{}logins\PYGZus{}ssl}\PYG{o}{=}YES
+\PYG{n+nv}{ssl\PYGZus{}tlsv1}\PYG{o}{=}YES
+\PYG{n+nv}{ssl\PYGZus{}sslv2}\PYG{o}{=}NO
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Compatibilidad}
+\PYG{n+nv}{ssl\PYGZus{}sslv3}\PYG{o}{=}NO
+\PYG{n+nv}{require\PYGZus{}ssl\PYGZus{}reuse}\PYG{o}{=}NO
+\PYG{n+nv}{ssl\PYGZus{}ciphers}\PYG{o}{=}HIGH
+\end{Verbatim}

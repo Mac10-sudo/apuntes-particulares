@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Host\PYG{+w}{ }\PYG{l+m}{172}.20.10.5\PYGZhy{}rsa
+\PYG{+w}{    }Hostname\PYG{+w}{ }\PYG{l+m}{172}.20.10.5
+\PYG{+w}{    }HostKeyAlgorithms\PYG{+w}{ }ssh\PYGZhy{}rsa
+\PYG{+w}{    }ForwardX11\PYG{+w}{ }yes
+\PYG{+w}{    }CheckHostIp\PYG{+w}{ }no
+\PYG{+w}{    }HostKeyAlias\PYG{+w}{ }\PYG{l+m}{172}.20.10.5\PYGZhy{}rsa
+\PYG{+w}{    }Port\PYG{+w}{ }\PYG{l+m}{2222}
+\PYG{+w}{    }User\PYG{+w}{ }ana
+\end{Verbatim}

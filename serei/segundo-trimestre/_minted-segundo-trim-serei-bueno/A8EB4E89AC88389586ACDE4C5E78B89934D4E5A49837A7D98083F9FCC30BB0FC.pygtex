@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase\PYG{+w}{ }ana@172.20.10.5
+Welcome\PYG{+w}{ }to\PYG{+w}{ }Ubuntu\PYG{+w}{ }\PYG{l+m}{14}.04.6\PYG{+w}{ }LTS\PYG{+w}{ }\PYG{o}{(}GNU/Linux\PYG{+w}{ }\PYG{l+m}{4}.4.0\PYGZhy{}142\PYGZhy{}generic\PYG{+w}{ }x86\PYGZus{}64\PYG{o}{)}
+
+\PYG{+w}{ }*\PYG{+w}{ }Documentation:\PYG{+w}{  }https://help.ubuntu.com/
+
+New\PYG{+w}{ }release\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}16.04.7 LTS\PYGZsq{}}\PYG{+w}{ }available.
+Run\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}do\PYGZhy{}release\PYGZhy{}upgrade\PYGZsq{}}\PYG{+w}{ }to\PYG{+w}{ }upgrade\PYG{+w}{ }to\PYG{+w}{ }it.
+
+Your\PYG{+w}{ }Hardware\PYG{+w}{ }Enablement\PYG{+w}{ }Stack\PYG{+w}{ }\PYG{o}{(}HWE\PYG{o}{)}\PYG{+w}{ }is\PYG{+w}{ }supported\PYG{+w}{ }\PYG{k}{until}\PYG{+w}{ }April\PYG{+w}{ }\PYG{l+m}{2019}.
+Last\PYG{+w}{ }login:\PYG{+w}{ }Tue\PYG{+w}{ }Feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{19}:19:15\PYG{+w}{ }\PYG{l+m}{2025}\PYG{+w}{ }from\PYG{+w}{ }\PYG{l+m}{172}.20.10.2
+ana@ubuntu2:\PYGZti{}\PYGZdl{}
+\end{Verbatim}

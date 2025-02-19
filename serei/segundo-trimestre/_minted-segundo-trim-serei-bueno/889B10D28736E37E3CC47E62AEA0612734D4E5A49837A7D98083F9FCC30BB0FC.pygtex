@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{chroot\PYGZus{}local\PYGZus{}user}\PYG{o}{=}YES
+\PYG{n+nv}{chroot\PYGZus{}list\PYGZus{}enable}\PYG{o}{=}YES
+\PYG{c+c1}{\PYGZsh{} (default follows)}
+\PYG{n+nv}{chroot\PYGZus{}list\PYGZus{}file}\PYG{o}{=}/etc/vsftpd.chroot\PYGZus{}list
+\end{Verbatim}

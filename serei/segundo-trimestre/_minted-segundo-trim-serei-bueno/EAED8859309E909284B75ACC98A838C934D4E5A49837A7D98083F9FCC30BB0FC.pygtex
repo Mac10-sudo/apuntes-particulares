@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+C:\PYG{l+s+se}{\PYGZbs{}U}sers\PYG{l+s+se}{\PYGZbs{}a}lumno\PYGZgt{}ftp\PYG{+w}{ }\PYG{l+m}{192}.168.9.114
+Conectado\PYG{+w}{ }a\PYG{+w}{ }\PYG{l+m}{192}.168.9.114.
+\PYG{l+m}{220}\PYG{+w}{ }\PYG{o}{(}vsFTPd\PYG{+w}{ }\PYG{l+m}{3}.0.2\PYG{o}{)}
+\PYG{l+m}{200}\PYG{+w}{ }Always\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }UTF8\PYG{+w}{ }mode.
+Usuario\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{192}.168.9.114:\PYG{o}{(}none\PYG{o}{))}:\PYG{+w}{ }anonymous
+\PYG{l+m}{331}\PYG{+w}{ }Please\PYG{+w}{ }specify\PYG{+w}{ }the\PYG{+w}{ }password.
+Contraseña:
+\PYG{l+m}{230}\PYG{+w}{ }Login\PYG{+w}{ }successful.
+ftp\PYGZgt{}
+\end{Verbatim}

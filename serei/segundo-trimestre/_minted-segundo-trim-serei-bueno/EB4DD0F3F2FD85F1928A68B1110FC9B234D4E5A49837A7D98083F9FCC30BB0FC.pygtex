@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYGZhy{}agent
+\PYG{n+nv}{SSH\PYGZus{}AUTH\PYGZus{}SOCK}\PYG{o}{=}/tmp/ssh\PYGZhy{}Fh3MJaBVg9pL/agent.4470\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{export}\PYG{+w}{ }SSH\PYGZus{}AUTH\PYGZus{}SOCK\PYG{p}{;}
+\PYG{n+nv}{SSH\PYGZus{}AGENT\PYGZus{}PID}\PYG{o}{=}\PYG{l+m}{4471}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{export}\PYG{+w}{ }SSH\PYGZus{}AGENT\PYGZus{}PID\PYG{p}{;}
+\PYG{n+nb}{echo}\PYG{+w}{ }Agent\PYG{+w}{ }pid\PYG{+w}{ }\PYG{l+m}{4471}\PYG{p}{;}
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYGZhy{}add\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase
+Enter\PYG{+w}{ }passphrase\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase:
+Identity\PYG{+w}{ }added:\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase\PYG{+w}{ }\PYG{o}{(}id\PYGZus{}rsa\PYGZus{}frase\PYG{o}{)}
+\end{Verbatim}

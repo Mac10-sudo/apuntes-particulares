@@ -1,0 +1,214 @@
+#+INCLUDE: ../serei-template.org
+#+TITLE: Apuntes Segundo Trimestre - SEREI
+#+STARTUP: overview
+
+\blankpage
+
+* FTP (/File Transfer protocol/)
+*** =ftpd=
+**** Instalación
+- =sudo apt-get install ftpd=
+**** Conexiones
+
+Nos podremos conectar de manera local ejecutando
+- =ftp localhost=
+Nos pedirá un usuario y una contraseña, estos tienen que ser del sistema, es decir, usar un usuario del sistema con la
+contraseña del mismo.
+
+También nos podremos conectar a otro servidor FTP ejecutando
+- =ftp NOMBREMAQUINASERVIDOR=
+- =ftp IPMAQUINASERVIDOR=
+Y al igual que de manera local se nos pedira un usuario y una contraseña existente en la máquina a la que nos conectamos.
+**** Usuarios /anonymous/ y ftp
+
+Para hacer /login/ con el usuario /anonymous/ lo que tendremos que hacer es iniciar una conexión FTP normal pero a la hora
+en la que se nos pida que introduzcamos el nombre de usuario con el que nos queremos conectar lo que tendremos que hacer será
+introducir /anonymous/
+
+Al principio no deberíamos poder conectarnos con ninguno de los dos usuarios, para poder realizar la conexión lo que tendremos que
+hacer será crear ambos usuarios en el sistema operativo ejecutando los siguientes comandos
+- =sudo adduser ftp=
+- =sudo adduser anonymous=
+En ambos usuarios pondremos como contraseña el mismo nombre del usuarios, esto no nos afectará en términos de seguridad debido a que
+es una contraseña que solo va a ver el sistema operativo, cuando realicemos conexiones FTP a estos usuarios, si queremos introducir la
+contraseña establecida no nos dejará conectarnos.
+
+Por último, para poder conectarnos con los usuarios /anonymous/ o ftp lo último que tendremos que hacer será modificar el fichero =/etc/ftpusers= de
+tal manera que nos quede de la siguiente manera
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+  # /etc/ftpusers: list of users disallowed ftp access. See ftpusers(5).
+
+  root
+  #ftp
+  #anonymous
+#+END_SRC
+
+Luego de haber realizado los pasos anteriores ya podremos hacer /login/ con los usuarios
+- /anonymous/
+  - =ftp localhost || NOMBREMAQUINASERVIDOR || DIRECCIONMAQUINASERVIDOR=
+    - */user/*: anonymous
+    - */password/*: algo
+- ftp
+    - */user/*: ftp
+    - */password/*: algo
+
+*Estos usuarios tienen muchas restricciones ya que por defecto están enjaulados*
+**** Jaulas
+
+El fichero correspondiente a los enjaulamientos en FTP es =/etc/ftpchroot=
+
+Para enjaular a un usuario lo único que tendremos que hacer será añadir el nombre de este usuario al fichero =/etc/ftpchroot=
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+  # /etc/ftpchroot: list of users who needs to be chrooted. See ftpchroot(5).
+  usuario4
+#+END_SRC
+**** Parar y arrancar el servicio
+
+FTP depende del superdemonio =inetd=. Para parar o arrancar el servicio FTP tendremos que parar o arrancar =inetd=.
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+  maka@ubuntu101:~$ ps aux | grep -i inetd
+  root      9032  0.0  0.0  10696   728 ?        Ss   07:10   0:00 /usr/sbin/inetd
+  maka     10499  0.0  0.0  15960   928 pts/1    S+   08:34   0:00 grep --color=auto -i inetd
+  maka@ubuntu101:~$ sudo kill 9032
+#+END_SRC
+
+Para arrancar el superdemonio lo único que habrá que hacer será ejecutar el comando =intetd=
+
+Para modificar algo del superdemonio =inetd= lo que habría que hacer sería modificar el fichero =/etc/inetd.conf=.
+
+=intetd= también es el superdemonio que maneja a =telnet=. El proceso de arranque y parada de =telnet= es igual que el de FTP.
+**** Macros
+Para crear macros usáremos
+- =$=.
+- Se tendrá que crear el fichero =.netrc= en el =$HOME= del usuarios al que queramos automatizar con la macro
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+
+  machine 172.26.0.100 login ana password ana	
+
+  macdef macrocasaManuel
+  prompt
+  cd casaManuel
+  cd banio
+  !mkdir copiaManuel
+  lcd copiaManuel
+  !mkdir banio
+  lcd banio
+  mget *
+  cd ..
+  lcd ..
+  !mkdir cocina
+  lcd cocina
+  cd cocina
+  mget *
+  lcd ..
+  !mkdir salon
+  lcd salon
+  cd ..
+  cd salon
+  mget *
+  cd ..
+  cd ..
+  lcd ..
+  lcd ..
+
+  macdef macrocasaAlvaroS
+  cd casaAlvaroS
+  cd banio
+  !mkdir copiaAlvaroS
+  lcd copiaAlvaroS
+  !mkdir banio
+  lcd banio
+  mget *
+  lcd ..
+  cd ..
+  !mkdir salon
+  lcd salon
+  cd salon
+  mget *
+  lcd ..
+  cd ..
+  !mkdir cocina
+  lcd cocina
+  cd cocina
+  mget *
+  cd ..
+  cd ..
+  lcd ..
+  lcd ..
+
+  macdef macrocasasMA
+  $macro macrocasaManuel 
+  $macro macrocasaAlvaroS
+
+
+#+END_SRC
+
+*¡OJO!, es muy importante para que funcione dejar los dos espacios en blanco al final del documento*
+
+**** TODO Automatización
+*** =lftp=
+**** Instalación
+- Recordemos que es un *cliente*
+- =sudo apt-get install lftp=
+- Este cliente nos ayudará con la transferencia de directorios completos
+  
+**** Parámetros y uso
+- Para mirar la ayuda usaremos ?
+- Los parámetros más interesantes son:
+  - */mirror/*: copiar un directorio entero
+    - =mirror casaMaka=
+  - =open=: sirve para conectarse
+    - =open 172.26.0.100=
+    - *¡OJO!, no usar el usuario =root= para hacer un =open=*
+  - =user=: sirve para usar algún usuario
+    - =user ana=
+- El fichero =.netrc= que hayamos configurado previamente se mantiene con =lftp= 
+- Podremos tener algo parecido a las macros con =lftp=
+  - Crear un fichero =touch macro=
+  - Editar el ficher =vi macro=
+#+ATTR_LATEX: :options frame=single
+    #+BEGIN_SRC bash
+
+# No hay que dejar un hueco en ana y ana. Es decir, no puede ser ana, ana
+      open 172.26.0.100 -u ana,ana
+      mirror casaMaka
+
+      
+#+END_SRC
+   - Ejecutar =lftp -f macro=
+- Podremos realizar un /script/
+  - Crear el fichero =touch macro2.sh=
+  - Editar el /script/ =vi macro2.sh=
+#+ATTR_LATEX: :options frame=single
+#+BEGIN_SRC bash
+  #!/bin/bash
+# Este script sube casaMaka de local al 172.26.0.100 con el nombre casaMakita
+  lftp 172.26.0.100 -u ana,ana<<EOF
+  mirror -R casaMaka casaMakita
+  EOF
+#+END_SRC 
+
+*** =vsftpd=
+- Hasta este punto todo lo que hemos realizado con FTP iba sobre texto plano, a partir de aquí es cuando "meteremos seguridad"
+  con temas de cifrado, etc
+- Es un *servidor*
+**** Instalación
+- No se puede instalar junto a =lftp= debido a que chocan o se intentan sobreponer
+- =sudo apt-get install vsftpd=
+**** Inicio y Parada
+- Esta vinculado a =inetd=
+- =service status vsftpd=
+- =service stop vsftpd=
+- =service start vsftpd=
+**** Datos "curiosos"
+- No tiene macros
+**** Securización
+1. Uso de certificados.
+   - Acceder al fichero =/etc/vsftpd.conf= 
+   - Habilitar =ssl_enable = yes=
+   - Descomentar nuestros certificados
+   - 

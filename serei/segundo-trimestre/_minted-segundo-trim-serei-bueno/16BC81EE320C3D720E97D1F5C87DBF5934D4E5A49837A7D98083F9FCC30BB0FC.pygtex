@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Uncomment this to allow local users to log in.}
+\PYG{n+nv}{local\PYGZus{}enable}\PYG{o}{=}YES\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Conexion con los usuarios locales del servidor}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Uncomment this to enable any form of FTP write command.}
+\PYG{n+nv}{write\PYGZus{}enable}\PYG{o}{=}YES\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Los usuarios podrán escribir y descargar cosas}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Default umask for local users is 077. You may wish to change this to 022,}
+\PYG{c+c1}{\PYGZsh{} if your users expect that (022 is used by most other ftpd\PYGZsq{}s)}
+\PYG{n+nv}{local\PYGZus{}umask}\PYG{o}{=}\PYG{l+m}{022}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Los permisos de los ficheros subidos serán 755}
+\end{Verbatim}

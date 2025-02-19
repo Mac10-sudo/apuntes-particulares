@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Host\PYG{+w}{ }*
+\PYG{c+c1}{\PYGZsh{}   ForwardAgent no}
+\PYG{+w}{    }ForwardX11\PYG{+w}{ }yes
+\end{Verbatim}

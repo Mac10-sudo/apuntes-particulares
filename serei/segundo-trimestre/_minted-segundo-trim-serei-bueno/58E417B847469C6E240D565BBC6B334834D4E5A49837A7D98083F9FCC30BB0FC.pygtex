@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+root@ubuntu2:\PYGZti{}\PYGZsh{}\PYG{+w}{ }openssl\PYG{+w}{ }req\PYG{+w}{ }\PYGZhy{}x509\PYG{+w}{ }\PYGZhy{}nodes\PYG{+w}{ }\PYGZhy{}days\PYG{+w}{ }\PYG{l+m}{365}\PYG{+w}{ }\PYGZhy{}newkey\PYG{+w}{ }rsa:4096\PYG{+w}{ }\PYGZhy{}keyout\PYG{+w}{ }/etc/ssl/private/vsftpd.pem\PYG{+w}{ }\PYGZhy{}out\PYG{+w}{ }/etc/ssl/private/vsftpd.pem
+Generating\PYG{+w}{ }a\PYG{+w}{ }\PYG{l+m}{4096}\PYG{+w}{ }bit\PYG{+w}{ }RSA\PYG{+w}{ }private\PYG{+w}{ }key
+...............................................................++
+..................++
+writing\PYG{+w}{ }new\PYG{+w}{ }private\PYG{+w}{ }key\PYG{+w}{ }to\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}/etc/ssl/private/vsftpd.pem\PYGZsq{}}
+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}
+You\PYG{+w}{ }are\PYG{+w}{ }about\PYG{+w}{ }to\PYG{+w}{ }be\PYG{+w}{ }asked\PYG{+w}{ }to\PYG{+w}{ }enter\PYG{+w}{ }information\PYG{+w}{ }that\PYG{+w}{ }will\PYG{+w}{ }be\PYG{+w}{ }incorporated
+into\PYG{+w}{ }your\PYG{+w}{ }certificate\PYG{+w}{ }request.
+What\PYG{+w}{ }you\PYG{+w}{ }are\PYG{+w}{ }about\PYG{+w}{ }to\PYG{+w}{ }enter\PYG{+w}{ }is\PYG{+w}{ }what\PYG{+w}{ }is\PYG{+w}{ }called\PYG{+w}{ }a\PYG{+w}{ }Distinguished\PYG{+w}{ }Name\PYG{+w}{ }or\PYG{+w}{ }a\PYG{+w}{ }DN.
+There\PYG{+w}{ }are\PYG{+w}{ }quite\PYG{+w}{ }a\PYG{+w}{ }few\PYG{+w}{ }fields\PYG{+w}{ }but\PYG{+w}{ }you\PYG{+w}{ }can\PYG{+w}{ }leave\PYG{+w}{ }some\PYG{+w}{ }blank
+For\PYG{+w}{ }some\PYG{+w}{ }fields\PYG{+w}{ }there\PYG{+w}{ }will\PYG{+w}{ }be\PYG{+w}{ }a\PYG{+w}{ }default\PYG{+w}{ }value,
+If\PYG{+w}{ }you\PYG{+w}{ }enter\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}.\PYGZsq{}},\PYG{+w}{ }the\PYG{+w}{ }field\PYG{+w}{ }will\PYG{+w}{ }be\PYG{+w}{ }left\PYG{+w}{ }blank.
+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}
+Country\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{2}\PYG{+w}{ }letter\PYG{+w}{ }code\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[}AU\PYG{o}{]}:ES
+State\PYG{+w}{ }or\PYG{+w}{ }Province\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}full\PYG{+w}{ }name\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[}Some\PYGZhy{}State\PYG{o}{]}:MADRID
+Locality\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}eg,\PYG{+w}{ }city\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[]}:ALCALA\PYG{+w}{ }DE\PYG{+w}{ }HENARES
+Organization\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}eg,\PYG{+w}{ }company\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[}Internet\PYG{+w}{ }Widgits\PYG{+w}{ }Pty\PYG{+w}{ }Ltd\PYG{o}{]}:IES\PYG{+w}{ }Alonso\PYG{+w}{ }de\PYG{+w}{ }Avellaneda
+Organizational\PYG{+w}{ }Unit\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}eg,\PYG{+w}{ }section\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[]}:ASIR
+Common\PYG{+w}{ }Name\PYG{+w}{ }\PYG{o}{(}e.g.\PYG{+w}{ }server\PYG{+w}{ }FQDN\PYG{+w}{ }or\PYG{+w}{ }YOUR\PYG{+w}{ }name\PYG{o}{)}\PYG{+w}{ }\PYG{o}{[]}:asir.iesavellaneda.com
+Email\PYG{+w}{ }Address\PYG{+w}{ }\PYG{o}{[]}:ismael.macareno@educa.madrid.org
+\end{Verbatim}

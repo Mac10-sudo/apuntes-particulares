@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka:\PYGZti{}/\PYG{+w}{ }\PYGZdl{}\PYG{+w}{ }ftp\PYG{+w}{ }\PYG{l+m}{192}.168.9.102\PYG{+w}{                                                                                }\PYG{o}{[}\PYG{l+m}{15}:34:38\PYG{o}{]}
+Connected\PYG{+w}{ }to\PYG{+w}{ }\PYG{l+m}{192}.168.9.102\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{192}.168.9.102\PYG{o}{)}.
+\PYG{l+m}{220}\PYGZhy{}FileZilla\PYG{+w}{ }Server\PYG{+w}{ }\PYG{l+m}{0}.9.51\PYG{+w}{ }beta
+\PYG{l+m}{220}\PYGZhy{}written\PYG{+w}{ }by\PYG{+w}{ }Tim\PYG{+w}{ }Kosse\PYG{+w}{ }\PYG{o}{(}tim.kosse@filezilla\PYGZhy{}project.org\PYG{o}{)}
+\PYG{l+m}{220}\PYG{+w}{ }Please\PYG{+w}{ }visit\PYG{+w}{ }https://filezilla\PYGZhy{}project.org/
+Name\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{192}.168.9.102:maka\PYG{o}{)}:\PYG{+w}{ }apuntes
+\PYG{l+m}{331}\PYG{+w}{ }Password\PYG{+w}{ }required\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }apuntes
+Password:
+\PYG{l+m}{230}\PYG{+w}{ }Logged\PYG{+w}{ }on
+Remote\PYG{+w}{ }system\PYG{+w}{ }\PYG{n+nb}{type}\PYG{+w}{ }is\PYG{+w}{ }UNIX.
+ftp\PYGZgt{}
+\end{Verbatim}

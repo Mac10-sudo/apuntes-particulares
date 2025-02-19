@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}/.ssh\PYGZdl{}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }known\PYGZus{}hosts
+maka@ubuntu201:\PYGZti{}/.ssh\PYGZdl{}\PYG{+w}{ }ssh\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }\PYG{n+nv}{HostKeyAlgorithms}\PYG{o}{=}ssh\PYGZhy{}rsa\PYG{+w}{ }ana@172.20.10.5
+The\PYG{+w}{ }authenticity\PYG{+w}{ }of\PYG{+w}{ }host\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}172.20.10.5 (172.20.10.5)\PYGZsq{}}\PYG{+w}{ }can\PYG{l+s+s1}{\PYGZsq{}t be established.}
+\PYG{l+s+s1}{RSA key fingerprint is ec:ed:1e:48:f1:8d:22:4e:e2:dc:58:e1:c6:b0:f7:d0.}
+\PYG{l+s+s1}{Are you sure you want to continue connecting (yes/no)? yes}
+\PYG{l+s+s1}{Warning: Permanently added \PYGZsq{}}\PYG{l+m}{172}.20.10.5\PYG{l+s+s1}{\PYGZsq{} (RSA) to the list of known hosts.}
+\PYG{l+s+s1}{Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 4.4.0\PYGZhy{}142\PYGZhy{}generic x86\PYGZus{}64)}
+
+\PYG{l+s+s1}{ * Documentation:  https://help.ubuntu.com/}
+
+\PYG{l+s+s1}{New release \PYGZsq{}}\PYG{l+m}{16}.04.7\PYG{+w}{ }LTS\PYG{l+s+s1}{\PYGZsq{} available.}
+\PYG{l+s+s1}{Run \PYGZsq{}}\PYG{k}{do}\PYGZhy{}release\PYGZhy{}upgrade\PYG{err}{\PYGZsq{}}\PYG{+w}{ }to\PYG{+w}{ }upgrade\PYG{+w}{ }to\PYG{+w}{ }it.
+
+Your\PYG{+w}{ }Hardware\PYG{+w}{ }Enablement\PYG{+w}{ }Stack\PYG{+w}{ }\PYG{o}{(}HWE\PYG{o}{)}\PYG{+w}{ }is\PYG{+w}{ }supported\PYG{+w}{ }\PYG{k}{until}\PYG{+w}{ }April\PYG{+w}{ }\PYG{l+m}{2019}.
+Last\PYG{+w}{ }login:\PYG{+w}{ }Tue\PYG{+w}{ }Feb\PYG{+w}{ }\PYG{l+m}{18}\PYG{+w}{ }\PYG{l+m}{18}:57:13\PYG{+w}{ }\PYG{l+m}{2025}\PYG{+w}{ }from\PYG{+w}{ }\PYG{l+m}{172}.20.10.2
+\end{Verbatim}

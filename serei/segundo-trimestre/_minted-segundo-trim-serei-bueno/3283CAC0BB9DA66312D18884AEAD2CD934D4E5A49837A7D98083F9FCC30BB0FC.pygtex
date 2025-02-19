@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+maka@ubuntu201:\PYGZti{}\PYGZdl{}\PYG{+w}{ }ssh\PYGZhy{}keygen\PYG{+w}{ }\PYGZhy{}t\PYG{+w}{ }rsa
+Generating\PYG{+w}{ }public/private\PYG{+w}{ }rsa\PYG{+w}{ }key\PYG{+w}{ }pair.
+Enter\PYG{+w}{ }file\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }which\PYG{+w}{ }to\PYG{+w}{ }save\PYG{+w}{ }the\PYG{+w}{ }key\PYG{+w}{ }\PYG{o}{(}/home/maka/.ssh/id\PYGZus{}rsa\PYG{o}{)}:\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase
+Enter\PYG{+w}{ }passphrase\PYG{+w}{ }\PYG{o}{(}empty\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }no\PYG{+w}{ }passphrase\PYG{o}{)}:
+Enter\PYG{+w}{ }same\PYG{+w}{ }passphrase\PYG{+w}{ }again:
+Your\PYG{+w}{ }identification\PYG{+w}{ }has\PYG{+w}{ }been\PYG{+w}{ }saved\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase.
+Your\PYG{+w}{ }public\PYG{+w}{ }key\PYG{+w}{ }has\PYG{+w}{ }been\PYG{+w}{ }saved\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }id\PYGZus{}rsa\PYGZus{}frase.pub.
+The\PYG{+w}{ }key\PYG{+w}{ }fingerprint\PYG{+w}{ }is:
+6c:33:c5:1d:58:28:32:17:3a:c1:30:8c:48:62:dc:07\PYG{+w}{ }maka@ubuntu201
+The\PYG{+w}{ }key\PYG{err}{\PYGZsq{}}s\PYG{+w}{ }randomart\PYG{+w}{ }image\PYG{+w}{ }is:
++\PYGZhy{}\PYGZhy{}\PYG{o}{[}\PYG{+w}{ }RSA\PYG{+w}{ }\PYG{l+m}{2048}\PYG{o}{]}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\PYG{p}{|}++.E+o.\PYG{+w}{ }..\PYG{+w}{ }+o\PYG{+w}{    }\PYG{p}{|}
+\PYG{p}{|}+....o+oo.o.\PYG{+w}{ }.\PYG{+w}{   }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{    }.\PYG{+w}{ }o+\PYG{+w}{ }.o\PYG{+w}{ }.\PYG{+w}{    }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{       }o\PYG{+w}{ }.\PYG{+w}{       }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{        }S\PYG{+w}{        }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{       }.\PYG{+w}{ }o\PYG{+w}{       }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{                 }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{                 }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{                 }\PYG{p}{|}
++\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\end{Verbatim}

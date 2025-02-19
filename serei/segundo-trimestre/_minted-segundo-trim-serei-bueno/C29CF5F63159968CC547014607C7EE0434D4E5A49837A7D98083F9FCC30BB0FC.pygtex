@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+root@ubuntu101:/var/www/sitioismael\PYGZsh{}\PYG{+w}{ }htpasswd\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }/etc/apache2/passwd\PYGZhy{}basic\PYG{+w}{ }pedro
+New\PYG{+w}{ }password:
+Re\PYGZhy{}type\PYG{+w}{ }new\PYG{+w}{ }password:
+Adding\PYG{+w}{ }password\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }user\PYG{+w}{ }pedro
+\end{Verbatim}

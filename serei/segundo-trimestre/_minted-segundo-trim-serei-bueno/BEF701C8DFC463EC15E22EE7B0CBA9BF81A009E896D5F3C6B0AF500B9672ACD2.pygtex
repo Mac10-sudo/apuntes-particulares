@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{VirtualHost} \PYG{n+na}{172}\PYG{err}{.}\PYG{n+na}{26}\PYG{err}{.}\PYG{n+na}{1}\PYG{err}{.}\PYG{n+na}{10:8081}\PYG{p}{\PYGZgt{}}
+        \PYGZsh{} The ServerName directive sets the request scheme, hostname and port that
+        \PYGZsh{} the server uses to identify itself. This is used when creating
+        \PYGZsh{} redirection URLs. In the context of virtual hosts, the ServerName
+        \PYGZsh{} specifies what hostname must appear in the request\PYGZsq{}s Host: header to
+        \PYGZsh{} match this virtual host. For the default virtual host (this file) this
+        \PYGZsh{} value is not decisive as it is used as a last resort host regardless.
+        \PYGZsh{} However, you must set it for any further virtual host explicitly.
+        ServerName www.puertos.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/puerto8081
+
+        \PYG{p}{\PYGZlt{}}\PYG{n+nt}{Directory} \PYG{err}{/}\PYG{n+na}{var}\PYG{err}{/}\PYG{n+na}{www}\PYG{err}{/}\PYG{n+na}{puerto8081}\PYG{p}{\PYGZgt{}}
+                Options Indexes FollowSymLinks
+                AllowOverride none
+                Require all granted
+        \PYG{p}{\PYGZlt{}/}\PYG{n+nt}{Directory}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}
